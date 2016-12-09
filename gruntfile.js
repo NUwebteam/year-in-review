@@ -132,6 +132,13 @@ module.exports = function(grunt) {
                     dest: 'dist/assets/bootstrap/'
                   },
                   {
+                    cwd: 'assets/slick/',
+                    src: [
+                        '*'
+                    ],
+                    dest: 'dist/assets/slick/'
+                  },
+                  {
                     cwd: './node_modules/jquery/dist/',
                     src: [
                         'jquery.min.js',
