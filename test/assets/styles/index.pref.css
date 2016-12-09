@@ -257,14 +257,14 @@ a .bkImg-button:hover {
 
 .grid-container {
   width: 100%;
-  height: 400px;
+  height: 100%;
   background-color: #fff;
 }
 
 .grid-wrapper {
   float: left;
   width: 33.33%;
-  height: 100%;
+  height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
   background-color: #fff;
@@ -294,4 +294,72 @@ a .bkImg-button:hover {
   width: 70%;
   padding: 20px 0px 0px 10px;
   text-align: left;
+}
+
+.bkImg-2-container {
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  color: #fff;
+}
+
+.bkImg-2-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.bkImg-2-content-container {
+  position: relative;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bkImg-2-content {
+  color: #fff;
+  padding-bottom: 50px;
+  width: 40%;
+  padding-left: 20px;
+}
+
+.bkImg-2-content h1 {
+  font-size: 3.25em;
+  margin: 25px 0px;
+}
+
+.bkImg-2-content h3 {
+  font-size: 1.5em;
+  margin: 25px 0px;
+}
+
+.bkImg-2-content p {
+  font-size: 1em;
+  text-align: left;
+  margin-top: 150px;
+}
+
+.bkImg-2-arrow {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 60px;
+}
+
+a:hover .bkImg-2-arrow {
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+       -o-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-transition: all .25s ease;
+       -o-transition: all .25s ease;
+          transition: all .25s ease;
+}
+
+a .bkImg-button:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+       -o-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .25s ease;
+       -o-transition: all .25s ease;
+          transition: all .25s ease;
 }

@@ -15,7 +15,7 @@ $(document).ready(function() {
 
       var ret = '';
 
-        ret += '<div class="grid-container">';
+        ret += '<div class="grid-container clearfix">';
         for (var i = 0; i < gridArray.length; i++) {
           if (gridArray.length % 4 === 0) {
             ret += '<a href="'+gridArray[i].url+'" target="_blank">';
@@ -76,7 +76,6 @@ $(document).ready(function() {
 
     };
 
-
     //  Template for Image background
 
     var bkImgTemplate = function(article) {
@@ -99,6 +98,28 @@ $(document).ready(function() {
       ret += '</div>';
       ret += '</div>';
       ret += '</div>';
+
+      return ret;
+    };
+
+    var bkImg_2_template = function(article) {
+
+      var ret = '';
+
+      ret +='<div class="bkImg-2-container clearfix">';
+      ret +='<div class="bkImg-2-wrapper clearfix"; style="background:url(http://www.northeastern.edu/news/wp-content/uploads/2016/12/030316_MM_ISEC_004.jpg) no-repeat center center;background-size:cover;">';
+      ret +='<div class="bkImg-2-content-container clearfix">';
+      ret +='<div class="bkImg-2-content clearfix">';
+      ret +='<h1>' + article.title + '</h1>';
+      ret +='<h3>'+article.subTitle+'</h3>';
+      ret +='<p>' + article.content + '</p>';
+      ret +='</div>';
+      ret +='<a href="'+article.url+'" target="_blank">';
+      ret +='<img class="bkImg-2-arrow" src="assets/images/arrow.png" alt="Arrow">';
+      ret +='</a>';
+      ret +='</div>';
+      ret +='</div>';
+      ret +='</div>';
 
       return ret;
     };
@@ -186,7 +207,7 @@ $(document).ready(function() {
 
       ret += '<div class="video-container">';
       ret += '<video loop muted autoplay poster="'+article.imageUrl+'" class="video-wrapper">';
-      // ret += '<source src="'+article.videoUrl+'" type="video/mp4">';
+      ret += '<source src="'+article.videoUrl+'" type="video/mp4">';
       ret += '</video>';
       ret += '<div class="video-content-container">';
       ret += '<div class="video-content">';
@@ -218,6 +239,8 @@ $(document).ready(function() {
         html += bkSolidLeftTemplate(articles[i]);
       } else if (articles[i].template === 'video') {
         html += videoTemplate(articles[i]);
+      } else if (articles[i].template === 'bkground-img-2') {
+        html += bkImg_2_template(articles[i]);
       } else if (articles[i].template === 'grid-layout') {
         gridArray.push(articles[i]);
       }

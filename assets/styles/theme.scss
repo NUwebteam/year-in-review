@@ -226,14 +226,14 @@ a .bkImg-button:hover {
 
 .grid-container {
   width: 100%;
-  height: 400px;
+  height: 100%;
   background-color: $white;
 }
 
 .grid-wrapper {
   float: left;
   width: 33.33%;
-  height: 100%;
+  height: 400px;
   object-fit: cover;
   background-color: $white;
 }
@@ -258,4 +258,76 @@ a .bkImg-button:hover {
   width: 70%;
   padding: 20px 0px 0px 10px;
   text-align: left;
+}
+
+// bkImg-2-section
+
+.bkImg-2-container {
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  color: $white;
+}
+
+.bkImg-2-wrapper {
+  width: 100%;
+  height: 100%;
+  // padding: 100px 0px;
+}
+
+.bkImg-2-content-container {
+  position: relative;
+  width: 100%;
+  // padding: 0px 0px 150px 0px;
+  background-color: rgba(0,0,0,.5);
+}
+
+.bkImg-2-content {
+  color: $white;
+  padding-bottom: 50px;
+  width: 40%;
+  padding-left: 20px;
+}
+
+.bkImg-2-content h1 {
+  font-size: 3.25em;
+  margin: 25px 0px;
+}
+
+.bkImg-2-content h3 {
+  font-size: 1.5em;
+  margin: 25px 0px;
+}
+
+.bkImg-2-content p {
+  font-size: 1em;
+  text-align: left;
+  margin-top: 150px;
+}
+
+.bkImg-2-arrow {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 60px;
+}
+
+a:hover .bkImg-2-arrow {
+  transform: scale(1.25);
+  transition: all .25s ease;
+}
+// .bkImg-button {
+//   text-decoration: none;
+//   text-transform: uppercase;
+//   padding: 15px 25px;
+//   background-color: $red;
+//   color: $white;
+//   font-weight: 900;
+//   font-size: .75em;
+//   // text-align: center !important;
+// }
+
+a .bkImg-button:hover {
+  transform: scale(1.10);
+  transition: all .25s ease;
 }
