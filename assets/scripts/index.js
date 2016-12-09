@@ -8,7 +8,7 @@ $(document).ready(function() {
   var imageArray = [];
 
   // $.get('./csv-test.csv', function (data) {
-  $.get('https://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
+  $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
 
     var articles = $.csv.toObjects(data);
 
