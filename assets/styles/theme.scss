@@ -119,11 +119,16 @@ a .bkImg-button:hover {
 
 .bkSolid-content-left {
   width: 100%;
-  padding: 0px 5%;
+  padding: 0px 10px;
   // text-align: left;
 }
 
-.bkSolidLeft-content-left {
+.bkSolid-content-left h3,
+.bkSolidleft-content-right h3 {
+  margin-bottom: 30px;
+}
+
+.bkSolidleft-content-left {
   width: 90%;
   height: 600px;
   margin-left: 5%;
@@ -133,10 +138,17 @@ a .bkImg-button:hover {
   // padding-top: ;
   width: 90%;
   height: 600px;
-  background: url(http://www.northeastern.edu/news/wp-content/uploads/2015/11/Toronto_08_1400x933-740x493.jpg) no-repeat center center;
+  // background: url(http://www.northeastern.edu/news/wp-content/uploads/2015/11/Toronto_08_1400x933-740x493.jpg) no-repeat center center;
+  // // background-size: cover;
   // background-size: cover;
-  background-size: cover;
 }
+
+.bkSolidleft-content-right {
+  // padding-top: ;
+  width: 100%;
+  padding: 0px 10px;
+}
+
 
 
 .bkSolid-content-left p {

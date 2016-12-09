@@ -1,0 +1,306 @@
+@media screen and (max-width: 992px){
+  body {
+    font-size: 16px;
+  }
+
+  .bkImg-content {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  .bkImg-2-content {
+    width: 50%;
+    padding-left: 15px;
+  }
+  .bkSolid-content-right,
+  .bkSolidleft-content-left {
+    width: 90%;
+    height: 450px;
+  }
+
+  .video-wrapper {
+    margin-top: 0px;
+  }
+
+  .video-content {
+    padding-top: 90px;
+  }
+
+  .faces-image {
+    height: 400px;
+  }
+
+  .image-wrapper {
+    position: relative;
+  }
+
+  .grid-content {
+    width: 80%;
+  }
+
+  .image-slide {
+    width: 100%;
+    min-height: 500px;
+  }
+
+  .image-content-container  {
+    position: absolute;
+    width: 100%;
+    min-height: 0px;
+    bottom: 0;
+    background-color: rgba(0,0,0,.6);
+  }
+
+  .image-content h2 {
+    font-size: 2em;
+    margin: 8px 0px;
+  }
+
+  .image-content h4 {
+    font-size: 1.5em;
+    margin: 8px 0px;
+  }
+
+  .image-content p {
+    font-size: .9em
+  }
+}
+
+@media screen and (max-width: 850px) {
+  body {
+    font-size: 14px;
+  }
+
+  .bkImg-content {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+
+  .bkImg-2-content {
+    width: 60%;
+    padding-left: 10px;
+  }
+
+  .bkSolid-content-container,
+  .bkImg-content-container {
+    width: 100%;
+    font-size: 1.15em;
+  }
+
+  .bkSolid-content-right {
+    display: none;
+  }
+
+  .bkSolid-content-left {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+
+  .bkSolidleft-content-right {
+    margin-top: -100px;
+    font-size: .75em;
+  }
+
+  .bkSolid-content-right,
+  .bkSolidleft-content-left {
+    width: 90%;
+    height: 400px;
+  }
+
+  .video-container {
+    min-height: 0px;
+  }
+
+  .video-content {
+    padding-top: 90px;
+  }
+
+  .faces-image {
+    height: 250px;
+  }
+
+  .grid-wrapper {
+    width: 50% !important;
+  }
+
+  .image-wrapper {
+    position: relative;
+  }
+
+  .grid-content-container {
+    font-size: .75em;
+  }
+
+  .grid-content {
+    width: 60%;
+  }
+
+
+  .image-slide {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .image-content-container  {
+    position: absolute;
+    width: 100%;
+    min-height: 0px;
+    bottom: 0;
+    background-color: rgba(0,0,0,.6);
+  }
+
+  .image-content h2 {
+    font-size: 2em;
+    margin: 8px 0px;
+  }
+
+  .image-content h4 {
+    font-size: 1.5em;
+    margin: 8px 0px;
+  }
+
+  .image-content p {
+    font-size: .9em
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+
+  body {
+    font-size: 12px;
+  }
+
+  .bkImg-content {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+
+  .bkImg-2-content {
+    width: 60%;
+    padding-left: 10px;
+  }
+
+  .bkSolid-content-container,
+  .bkImg-content-container {
+    width: 100%;
+    font-size: 1.15em;
+  }
+
+  .bkSolid-content-right {
+    display: none;
+  }
+
+  .bkSolid-content-left {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+
+  .bkSolidleft-content-right {
+    margin-top: -100px;
+    font-size: .75em;
+  }
+
+  .bkSolid-content-right,
+  .bkSolidleft-content-left {
+    width: 90%;
+    height: 400px;
+  }
+
+  .video-container {
+    min-height: 0px;
+  }
+
+  .video-content {
+    padding-top: 90px;
+  }
+
+  .faces-image {
+    width: 50% !important;
+    // margin-left: 25%;
+    height: 300px;
+  }
+
+  .grid-wrapper {
+    width: 100% !important;
+    height: 250px;
+  }
+
+  .image-wrapper {
+    position: relative;
+  }
+
+  .grid-content-container {
+    font-size: 1em;
+  }
+
+  .grid-content {
+    width: 60%;
+  }
+
+
+  .image-slide {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .image-content-container  {
+    position: absolute;
+    width: 100%;
+    min-height: 0px;
+    bottom: 0;
+    background-color: rgba(0,0,0,.6);
+  }
+
+  .image-content h2 {
+    font-size: 2em;
+    margin: 8px 0px;
+  }
+
+  .image-content h4 {
+    font-size: 1.5em;
+    margin: 8px 0px;
+  }
+
+  .image-content p {
+    font-size: .9em
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .bkImg-content {
+      width: 90%;
+      margin-left: 5%;
+    }
+
+  .bkImg-2-content {
+    width: 75%;
+    padding-left: 8px;
+  }
+  .video-content {
+    padding-top: 40px;
+  }
+  .faces-image {
+    width: 80% !important;
+    margin-left: 10%;
+    height: 350px;
+  }
+  .image-slide {
+    width: 100%;
+    min-height: 300px;
+  }
+  .image-content h2 {
+    font-size: 2.25em;
+    margin: 8px 0px;
+  }
+
+  .image-content h4 {
+    font-size: 2em;
+    margin: 8px 0px;
+  }
+
+  .image-content p {
+    display: none;
+  }
+}

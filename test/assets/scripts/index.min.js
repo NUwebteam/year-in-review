@@ -160,11 +160,11 @@ $(document).ready(function() {
 
       ret += '<div class="bkSolid-container clearfix">';
       ret += '<div class="bkSolid-content-container clearfix">';
-      ret += '<div class="bkSolidLeft-content-left" style="background:url('+article.imageUrl+') no-repeat center center;background-size: cover;">';
+      ret += '<div class="bkSolidleft-content-left" style="background:url('+article.imageUrl+') no-repeat center center;background-size: cover;">';
       ret += '</div>';
       ret += '</div>';
       ret += '<div class="bkSolid-content-container clearfix">';
-      ret += '<div class="bkSolidleft-content-left">';
+      ret += '<div class="bkSolidleft-content-right">';
       ret += '<h1>'+article.title+'</h1>';
       if(article.subTitle) {
         ret += '<h3>'+article.subTitle+'</h3>';
@@ -235,8 +235,8 @@ $(document).ready(function() {
         ret += '</div>';
         ret += '<div class="image-content-container">';
         ret += '<div class="image-content">';
-        ret += '<h1>'+imageArray[i].title+'</h1>';
-        ret += '<h3>'+imageArray[i].subTitle+'</h3>';
+        ret += '<h2>'+imageArray[i].title+'</h2>';
+        ret += '<h4>'+imageArray[i].subTitle+'</h4>';
         ret += '<p>'+imageArray[i].content+'</p>';
         ret += '</div>';
         ret += '</div>';
