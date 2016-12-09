@@ -3,7 +3,9 @@
 $(document).ready(function() {
 
   var html = '';
+  var facesArray = [];
   var gridArray = [];
+  var imageArray = [];
 
   // $.get('./csv-test.csv', function (data) {
   $.get('https://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
@@ -11,7 +13,6 @@ $(document).ready(function() {
     var articles = $.csv.toObjects(data);
 
     var gridTemplate = function(gridArray) {
-      // gridArrayLength = gridArray.length();
 
       var ret = '';
 
@@ -179,21 +180,22 @@ $(document).ready(function() {
       return ret;
     };
 
-    var facesTemplate = function(facesArticle, facesImagesArray, facesLinksArray, imageLength) {
+    var facesTemplate = function(facesArray) {
+
       var ret = '';
 
       ret += '<div class="faces-container clearfix">';
       ret += '<div class="faces-wrapper">';
-      for (var i = 0; i < facesImagesArray.length; i++) {
-        ret += '<a href="'+facesLinksArray[i]+'" target="_blank">';
-        ret += '<div class="faces-image" style="width:'+imageLength+'%;background:url('+facesImagesArray[i]+') no-repeat center center;background-size:cover">';
+      for (var i = 0; i < facesArray.length; i++) {
+        ret += '<a href="'+facesArray[i].facesLinkUrl+'" target="_blank">';
+        ret += '<div class="faces-image" style="width:'+(100/facesArray.length)+'%;background:url('+facesArray[i].facesImageUrl+') no-repeat center center;background-size:cover">';
         ret += '</div>';
         ret += '</a>';
       }
       ret += '</div>';
       ret += '<div class="faces-content">';
-      ret += '<h1>'+facesArticle.title+'</h1>';
-      ret += '<a class="bkImg-button" href="'+facesArticle.url+'" target="_blank">Explore Article</a>';
+      ret += '<h1>Faces of Northeastern</h1>';
+      ret += '<a class="bkImg-button" href="'+facesArray.url+'" target="_blank">Explore Article</a>';
       ret += '</div>';
       ret += '</div>';
 
@@ -222,15 +224,38 @@ $(document).ready(function() {
 
     };
 
+    var imageTemplate = function(imageArray) {
+      console.log(imageArray);
+      var ret = '';
+
+      ret += '<div class="image-container clearfix">';
+      for ( var i = 0; i < imageArray.length; i++) {
+        ret += '<div class="image-wrapper">';
+        ret += '<div class="image-slide" style="background:url('+imageArray[i].imageUrl+')no-repeat center center;background-size:100% auto;">';
+        ret += '</div>';
+        ret += '<div class="image-content-container">';
+        ret += '<div class="image-content">';
+        ret += '<h1>'+imageArray[i].title+'</h1>';
+        ret += '<h3>'+imageArray[i].subTitle+'</h3>';
+        ret += '<p>'+imageArray[i].content+'</p>';
+        ret += '</div>';
+        ret += '</div>';
+        ret += '</div>';
+      }
+      ret += '</div>';
+
+      return ret;
+    }
+
     // Loop through Article content
 
     for (var i = 0; i < articles.length; i++) {
-      if(articles[i].facesImageUrl !== "") {
-        var facesArticle = articles[i];
-        var facesImagesArray = articles[i].facesImageUrl.split(',');
-        var facesLinkArray = articles[i].facesLinkUrl.split(',');
-        var imageLength = (100/facesImagesArray.length);
-        html += facesTemplate(facesArticle, facesImagesArray, facesLinkArray, imageLength)
+     if (articles[i].template === 'faces') {
+        facesArray.push(articles[i]);
+      } else if (articles[i].template === 'grid-layout') {
+        gridArray.push(articles[i]);
+      } else if (articles[i].template === 'image-gallery') {
+        imageArray.push(articles[i]);
       } else if(articles[i].template === 'bkground-img') {
         html += bkImgTemplate(articles[i]);
       } else if (articles[i].template === 'bkground-white-right-img') {
@@ -241,15 +266,24 @@ $(document).ready(function() {
         html += videoTemplate(articles[i]);
       } else if (articles[i].template === 'bkground-img-2') {
         html += bkImg_2_template(articles[i]);
-      } else if (articles[i].template === 'grid-layout') {
-        gridArray.push(articles[i]);
       }
     }
 
+    html += facesTemplate(facesArray);
     html += gridTemplate(gridArray);
+    html += imageTemplate(imageArray);
 
     $('#content-template').html(html);
 
-  });
+    $('.image-container').slick({
+      infinite: true,
+      adaptiveHeight: false,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 4000,
+      });
 
+  });
 });
