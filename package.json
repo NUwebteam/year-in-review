@@ -1,0 +1,33 @@
+{
+  "name": "numarcom.build-template",
+  "version": "1.0.0",
+  "private": true,
+  "license": {
+    "software": "GNU GPLv3",
+    "content": "CC­BY­NC­SA 4.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-preset-es2015": "^6.16.0",
+    "grunt": "^0.4.1",
+    "grunt-autoprefixer": "*",
+    "grunt-build": "^0.1.1",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-image": "*",
+    "grunt-minified": "0.0.6",
+    "grunt-notify": "*",
+    "grunt-sync": "*",
+    "matchdep": "*",
+    "node-sass": "^3.10.1",
+    "normalize.css": "^5.0.0",
+    "requirejs": "*"
+  }
+}

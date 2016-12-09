@@ -1,0 +1,64 @@
+tmp
+# dist/
+# assets/styles/*.css
+# assets/styles/*.css.*
+# assets/scripts/*.min.js
+*.woff2
+*.woff
+*.svg
+*.png
+*.jpg
+*.ttf
+*.eot
+*.mp4
+*.gif
+
+# Created by https://www.gitignore.io/api/node,osx,linux,windows,ruby,node,rails,express,ember
+
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+### OSX ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Used by dotenv library to load environment variables.
+# .env
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log

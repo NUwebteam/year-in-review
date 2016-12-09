@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+
+a:hover,
+a:visited {
+  color: $white;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  background-color: $dark-grey;
+  color: $black;
+  margin: 0px;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0px auto;
+}
+
+.hero-container {
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 100;
+  text-align: center;
+  // background-color: $black;
+  color: $white;
+  padding: 5% 0;
+  background: url('https://www.google.com/trends/2014/static/images/hero-landing-1440.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.hero-content {
+  // font-size: 1em;
+}
+
+// bkImg Template
+
+.bkImg-container {
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  color: $white;
+}
+
+.bkImg-wrapper {
+  width: 100%;
+  height: 100%;
+  // padding: 100px 0px;
+}
+
+.bkImg-content-container {
+  width: 100%;
+  padding: 30px 0px 90px 0px;
+  background-color: rgba(0, 0, 0, .4);
+  text-align: center;
+}
+
+.bkImg-content {
+  width: 50%;
+  margin-left: 25%;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.bkImg-content p {
+  font-size: 1em;
+  text-align: left;
+}
+
+.bkImg-button {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  background-color: $red;
+  color: $white;
+  font-weight: 900;
+  font-size: .75em;
+  // text-align: center !important;
+}
+
+a .bkImg-button:hover {
+  transform: scale(1.10);
+  transition: all .25s ease;
+}
+
+.bkImg-content a,
+.bkSolid-content-left a {
+  text-align: center;
+}
+
+// bkSolid Template
+
+.bkSolid-container {
+  background-color: $white;
+  width: 100%;
+  color: $black;
+  // clear: both;
+  font-size: 1em;
+}
+
+.bkSolid-content-container {
+  float: left;
+  width: 50%;
+  min-height: 100%;
+  padding: 60px 0px 60px 0px;
+  text-align: center;
+}
+
+.bkSolid-content-left {
+  width: 100%;
+  padding: 0px 5%;
+  // text-align: left;
+}
+
+.bkSolidLeft-content-left {
+  width: 90%;
+  height: 600px;
+  margin-left: 5%;
+}
+
+.bkSolid-content-right {
+  // padding-top: ;
+  width: 90%;
+  height: 600px;
+  background: url(http://www.northeastern.edu/news/wp-content/uploads/2015/11/Toronto_08_1400x933-740x493.jpg) no-repeat center center;
+  // background-size: cover;
+  background-size: cover;
+}
+
+
+.bkSolid-content-left p {
+  font-size: 1em;
+  padding-bottom: 25px;
+}
+
+.bkSolid-image {
+  width: 100%;
+  height: 100%;
+}
+
+// facesBk-section
+.faces-container {
+  background-color: $black;
+  width: 100%;
+  height: 100%;
+  color: $white;
+  font-size: 1em;
+}
+
+.faces-wrapper {
+  float: left;
+  background-color: $black;
+  width: 100%;
+  height: 100%;
+}
+
+.faces-image {
+  background: url(http://www.northeastern.edu/news/wp-content/uploads/2016/12/Thumb_D3A0190.jpg) no-repeat center center;
+  background-size: cover;
+  height: 500px;
+  float: left;
+}
+
+.faces-image:hover {
+  opacity: .6;
+  cursor: zoom-in;
+}
+
+.faces-content {
+  text-align: center;
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+// videoBk-section
+
+.video-container {
+  position: relative;
+  background-color: $black;
+  max-height: 500px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.video-wrapper {
+  background-color: $black;
+  width: 100%;
+  height: auto;
+  margin-top: -150px;
+}
+
+.video-content-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, .70);
+  text-align: center;
+}
+
+.video-content {
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+  color: $white;
+}
+
+.video-content h3 {
+  margin-bottom: 40px;
+}
+
+// grid section
+
+.grid-container {
+  width: 100%;
+  height: 400px;
+  background-color: $white;
+}
+
+.grid-wrapper {
+  float: left;
+  width: 33.33%;
+  height: 100%;
+  object-fit: cover;
+  background-color: $white;
+}
+
+.grid-wrapper:hover {
+  // width:
+  transform: scale(.97);
+  transition: all .25s ease;
+  cursor: pointer;
+  opacity: .85;
+}
+
+.grid-content-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  font-size: .5em;
+}
+
+.grid-content {
+  color: $white;
+  width: 70%;
+  padding: 20px 0px 0px 10px;
+  text-align: left;
+}
