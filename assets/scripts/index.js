@@ -8,8 +8,8 @@ $(document).ready(function() {
   var imageArray = [];
   var articlesArray = [];
 
-  // $.get('./csv-test.csv', function (data) {
-  $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
+  // $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
+  $.get('./year-in-review-test.csv', function (data) {
 
     var articles = $.csv.toObjects(data);
 
