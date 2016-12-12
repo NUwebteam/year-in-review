@@ -171,7 +171,7 @@ $(document).ready(function() {
         ret += '<h3>'+article.subTitle+'</h3>';
       }
       if(article.content) {
-        ret += '<p>'+article.content+'</p>';
+        ret += '<p class="bkSolidLeft-paragraph">'+article.content+'</p>';
       }
       ret += '<a class="bkImg-button" href="'+article.url+'" target="_blank">Explore Article</a>';
       ret += '</div>';
