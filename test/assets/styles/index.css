@@ -6,37 +6,37 @@ body {
 
 h1 {
   font-weight: 100;
-  font-size: 3.5em;
+  font-size: 3em;
 }
 
 h2 {
   font-weight: 300;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h3 {
   font-weight: 300;
-  font-size: 2.60em;
+  font-size: 2.25em;
 }
 
 h4 {
   font-weight: 700;
-  font-size: 2.25em;
+  font-size: 2em;
 }
 
 h5 {
   font-weight: 400;
-  font-size: 1.75em;
+  font-size: 1.5em;
 }
 
 h6 {
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 p {
   font-weight: 300;
-  font-size: 1.25em;
+  font-size: 1.05em;
 }
 
 * {
@@ -107,7 +107,6 @@ body {
 }
 
 .bkImg-content p {
-  font-size: 1em;
   text-align: left;
 }
 
@@ -276,7 +275,7 @@ a .bkImg-button:hover {
 .grid-content-container {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   font-size: .5em;
 }
 
@@ -313,17 +312,14 @@ a .bkImg-button:hover {
 }
 
 .bkImg-2-content h1 {
-  font-size: 3.25em;
   margin: 25px 0px;
 }
 
 .bkImg-2-content h3 {
-  font-size: 1.5em;
   margin: 25px 0px;
 }
 
 .bkImg-2-content p {
-  font-size: 1em;
   text-align: left;
   margin-top: 150px;
 }
@@ -383,7 +379,11 @@ a .bkImg-button:hover {
 
 @media screen and (max-width: 992px) {
   body {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .hero-container {
+    font-size: 1em;
   }
 
   .bkImg-content {
@@ -451,7 +451,7 @@ a .bkImg-button:hover {
 }
 @media screen and (max-width: 850px) {
   body {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .bkImg-content {
@@ -470,24 +470,33 @@ a .bkImg-button:hover {
     font-size: 1.15em;
   }
 
+  .bkSolid-content-container {
+    padding: 40px 10px;
+  }
+
   .bkSolid-content-right {
     display: none;
   }
 
   .bkSolid-content-left {
-    width: 75%;
-    margin-left: 12.5%;
+    width: 100%;
+    padding: 0px 10px;
   }
 
   .bkSolidleft-content-right {
     margin-top: -100px;
     font-size: .75em;
+    padding: 60px 10px;
   }
 
   .bkSolid-content-right,
   .bkSolidleft-content-left {
     width: 90%;
     height: 400px;
+  }
+
+  .bkSolidleft-content-left {
+    display: none !important;
   }
 
   .video-container {
@@ -500,6 +509,7 @@ a .bkImg-button:hover {
 
   .faces-image {
     height: 250px;
+    width: 33.33% !important;
   }
 
   .grid-wrapper {
@@ -550,6 +560,10 @@ a .bkImg-button:hover {
     font-size: 12px;
   }
 
+  p {
+    font-size: 1.25em !important;
+  }
+
   .bkImg-content {
     width: 75%;
     margin-left: 12.5%;
@@ -558,6 +572,10 @@ a .bkImg-button:hover {
   .bkImg-2-content {
     width: 60%;
     padding-left: 10px;
+  }
+
+  .bkImg-2-content p {
+    font-size: 1.25em !important;
   }
 
   .bkSolid-content-container,
@@ -658,14 +676,41 @@ a .bkImg-button:hover {
     padding-left: 8px;
   }
 
+  .bkImg-content-container {
+    padding: 5px 0 50px;
+  }
+
+  .bkSolid-content-container {
+    padding: 20px 0;
+  }
+
+  .grid-wrapper {
+    height: 200px;
+  }
+
   .video-content {
-    padding-top: 40px;
+    padding-top: 5px;
+  }
+
+  .bkSolidleft-content-right {
+    margin-top: -25px;
+    margin-bottom: 25px;
+    font-size: .75em;
   }
 
   .faces-image {
     width: 80% !important;
     margin-left: 10%;
-    height: 350px;
+    height: 300px;
+  }
+
+  .bkImg-2-content p {
+    margin-top: 75px;
+    font-size: 1.4em !important;
+  }
+
+  .bkImg-2-arrow {
+    width: 50px;
   }
 
   .image-slide {
@@ -681,6 +726,10 @@ a .bkImg-button:hover {
   .image-content h4 {
     font-size: 2em;
     margin: 8px 0px;
+  }
+
+  .image-content {
+    padding: 5px 5px;
   }
 
   .image-content p {

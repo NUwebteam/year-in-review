@@ -6,6 +6,7 @@ $(document).ready(function() {
   var facesArray = [];
   var gridArray = [];
   var imageArray = [];
+  var articlesArray = [];
 
   // $.get('./csv-test.csv', function (data) {
   $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
@@ -108,7 +109,7 @@ $(document).ready(function() {
       var ret = '';
 
       ret +='<div class="bkImg-2-container clearfix">';
-      ret +='<div class="bkImg-2-wrapper clearfix"; style="background:url(http://www.northeastern.edu/news/wp-content/uploads/2016/12/030316_MM_ISEC_004.jpg) no-repeat center center;background-size:cover;">';
+      ret +='<div class="bkImg-2-wrapper clearfix"; style="background:url('+article.imageUrl+') no-repeat center center;background-size:cover;">';
       ret +='<div class="bkImg-2-content-container clearfix">';
       ret +='<div class="bkImg-2-content clearfix">';
       ret +='<h1>' + article.title + '</h1>';
@@ -225,7 +226,6 @@ $(document).ready(function() {
     };
 
     var imageTemplate = function(imageArray) {
-      console.log(imageArray);
       var ret = '';
 
       ret += '<div class="image-container clearfix">';
@@ -247,6 +247,10 @@ $(document).ready(function() {
       return ret;
     }
 
+    Array.prototype.insert = function (index, item) {
+      this.splice(index, 0, item);
+    };
+
     // Loop through Article content
 
     for (var i = 0; i < articles.length; i++) {
@@ -257,21 +261,51 @@ $(document).ready(function() {
       } else if (articles[i].template === 'image-gallery') {
         imageArray.push(articles[i]);
       } else if(articles[i].template === 'bkground-img') {
-        html += bkImgTemplate(articles[i]);
+        articlesArray.push(articles[i]);
       } else if (articles[i].template === 'bkground-white-right-img') {
-        html += bkSolidTemplate(articles[i]);
+        articlesArray.push(articles[i]);
       } else if (articles[i].template === 'bkground-white-left-img') {
-        html += bkSolidLeftTemplate(articles[i]);
+        articlesArray.push(articles[i]);
       } else if (articles[i].template === 'video') {
-        html += videoTemplate(articles[i]);
+        articlesArray.push(articles[i]);
       } else if (articles[i].template === 'bkground-img-2') {
-        html += bkImg_2_template(articles[i]);
+        articlesArray.push(articles[i]);
       }
     }
 
-    html += facesTemplate(facesArray);
-    html += gridTemplate(gridArray);
+    for (var e = 0; e < articlesArray.length; e++) {
+      if (e === 3 ) {
+        articlesArray.insert(e, facesArray);
+        // html += facesTemplate(facesArray);
+      } else if ( e === 6 ){
+        articlesArray.insert(e, gridArray);
+        //  html += gridTemplate(gridArray);
+      // } else if (e === articlesArray[-1]) {
+      //   articlesArray.insert(e, imageArray);
+      //   // html += imageTemplate(imageArray);
+      }
+    }
+
+    for (var i = 0; i < articlesArray.length; i++) {
+      if (i === 3 ) {
+        html += facesTemplate(facesArray);
+      } else if ( i === 8 ) {
+         html += gridTemplate(gridArray);
+      } else if (articlesArray[i].template === 'bkground-img') {
+        html += bkImgTemplate(articlesArray[i]);
+      } else if (articlesArray[i].template === 'bkground-white-right-img') {
+        html += bkSolidTemplate(articlesArray[i]);
+      } else if (articlesArray[i].template === 'bkground-white-left-img') {
+        html += bkSolidLeftTemplate(articlesArray[i]);
+      } else if (articlesArray[i].template === 'video') {
+        html += videoTemplate(articlesArray[i]);
+      } else if (articlesArray[i].template === 'bkground-img-2') {
+        html += bkImg_2_template(articlesArray[i]);
+      }
+    }
+
     html += imageTemplate(imageArray);
+
 
     $('#content-template').html(html);
 

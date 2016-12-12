@@ -1,6 +1,10 @@
 @media screen and (max-width: 992px){
   body {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .hero-container {
+    font-size: 1em;
   }
 
   .bkImg-content {
@@ -68,7 +72,7 @@
 
 @media screen and (max-width: 850px) {
   body {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .bkImg-content {
@@ -87,24 +91,33 @@
     font-size: 1.15em;
   }
 
+  .bkSolid-content-container {
+    padding: 40px 10px;
+  }
+
   .bkSolid-content-right {
     display: none;
   }
 
   .bkSolid-content-left {
-    width: 75%;
-    margin-left: 12.5%;
+    width: 100%;
+    padding: 0px 10px;
   }
 
   .bkSolidleft-content-right {
     margin-top: -100px;
     font-size: .75em;
+    padding: 60px 10px;
   }
 
   .bkSolid-content-right,
   .bkSolidleft-content-left {
     width: 90%;
     height: 400px;
+  }
+
+  .bkSolidleft-content-left {
+    display: none !important;
   }
 
   .video-container {
@@ -117,6 +130,7 @@
 
   .faces-image {
     height: 250px;
+    width: 33.33% !important;
   }
 
   .grid-wrapper {
@@ -171,6 +185,10 @@
     font-size: 12px;
   }
 
+  p {
+    font-size: 1.25em !important;
+  }
+
   .bkImg-content {
     width: 75%;
     margin-left: 12.5%;
@@ -179,6 +197,10 @@
   .bkImg-2-content {
     width: 60%;
     padding-left: 10px;
+  }
+
+  .bkImg-2-content p {
+    font-size: 1.25em !important;
   }
 
   .bkSolid-content-container,
@@ -281,13 +303,36 @@
     width: 75%;
     padding-left: 8px;
   }
+
+  .bkImg-content-container {
+    padding: 5px 0 50px;
+  }
+
+  .bkSolid-content-container {
+    padding: 20px 0;
+  }
+  .grid-wrapper {
+    height: 200px;
+  }
   .video-content {
-    padding-top: 40px;
+    padding-top: 5px;
+  }
+  .bkSolidleft-content-right {
+    margin-top: -25px;
+    margin-bottom: 25px;
+    font-size: .75em;
   }
   .faces-image {
     width: 80% !important;
     margin-left: 10%;
-    height: 350px;
+    height: 300px;
+  }
+  .bkImg-2-content p {
+    margin-top: 75px;
+    font-size: 1.4em !important;
+  }
+  .bkImg-2-arrow {
+    width: 50px;
   }
   .image-slide {
     width: 100%;
@@ -301,6 +346,10 @@
   .image-content h4 {
     font-size: 2em;
     margin: 8px 0px;
+  }
+
+  .image-content {
+    padding: 5px 5px;
   }
 
   .image-content p {
