@@ -8,8 +8,8 @@ $(document).ready(function() {
   var imageArray = [];
   var articlesArray = [];
 
-  // $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
-  $.get('./year-in-review-test.csv', function (data) {
+  $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
+  // $.get('./year-in-review-test.csv', function (data) {
 
     var articles = $.csv.toObjects(data);
 
@@ -209,8 +209,10 @@ $(document).ready(function() {
       var ret = '';
 
       ret += '<div class="video-container">';
-      ret += '<video loop muted autoplay poster="'+article.imageUrl+'" class="video-wrapper">';
-      ret += '<source src="'+article.videoUrl+'" type="video/mp4">';
+      ret += '<video loop muted autoplay poster="'+article.imageUrl+'" class="video-wrapper" style="margin-bottom: -5px;">';
+      if ($(window).width() > 767) {
+        ret += '<source src="'+article.videoUrl+'" type="video/mp4" class="video-source">';
+      }
       ret += '</video>';
       ret += '<div class="video-content-container">';
       ret += '<div class="video-content">';
@@ -276,20 +278,15 @@ $(document).ready(function() {
     for (var e = 0; e < articlesArray.length; e++) {
       if (e === 3 ) {
         articlesArray.insert(e, facesArray);
-        // html += facesTemplate(facesArray);
       } else if ( e === 6 ){
         articlesArray.insert(e, gridArray);
-        //  html += gridTemplate(gridArray);
-      // } else if (e === articlesArray[-1]) {
-      //   articlesArray.insert(e, imageArray);
-      //   // html += imageTemplate(imageArray);
       }
     }
 
     for (var i = 0; i < articlesArray.length; i++) {
       if (i === 3 ) {
         html += facesTemplate(facesArray);
-      } else if ( i === 8 ) {
+      } else if ( i === 6 ) {
          html += gridTemplate(gridArray);
       } else if (articlesArray[i].template === 'bkground-img') {
         html += bkImgTemplate(articlesArray[i]);
@@ -318,6 +315,5 @@ $(document).ready(function() {
       autoplay: true,
       autoplaySpeed: 4000,
       });
-
   });
 });
