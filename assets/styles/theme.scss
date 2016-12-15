@@ -76,6 +76,7 @@ body {
 .bkImg-content p {
   // font-size: 1em;
   text-align: left;
+  font-family: 'Roboto', sans-serif;
 }
 
 .bkImg-button {
@@ -97,6 +98,7 @@ a .bkImg-button:hover {
 .bkImg-content a,
 .bkSolid-content-left a {
   text-align: center;
+  color: $white;
 }
 
 // bkSolid Template
@@ -375,4 +377,8 @@ a:hover .bkImg-2-arrow {
 a .bkImg-button:hover {
   transform: scale(1.10);
   transition: all .25s ease;
+}
+
+.pf-content {
+  width: 100%;
 }

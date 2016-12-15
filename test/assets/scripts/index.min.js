@@ -9,7 +9,7 @@ $(document).ready(function() {
   var articlesArray = [];
 
   // $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
-  $.get('./year-in-review-test.csv', function (data) {
+  $.get('/news/wp-content/themes/nu-news-002/year-in-review/year-in-review-test.csv', function (data) {
 
     var articles = $.csv.toObjects(data);
 
@@ -117,7 +117,7 @@ $(document).ready(function() {
       ret +='<p>' + article.content + '</p>';
       ret +='</div>';
       ret +='<a href="'+article.url+'" target="_blank">';
-      ret +='<img class="bkImg-2-arrow" src="assets/images/arrow.png" alt="Arrow">';
+      ret +='<img class="bkImg-2-arrow" src="/news/wp-content/themes/nu-news-002/year-in-review/assets/images/arrow.png" alt="Arrow">';
       ret +='</a>';
       ret +='</div>';
       ret +='</div>';

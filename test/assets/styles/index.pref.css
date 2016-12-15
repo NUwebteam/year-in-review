@@ -1,40 +1,40 @@
-body {
+body:not(#about-site) {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   color: #000;
 }
 
-h1 {
+h1:not(#about-site) {
   font-weight: 100;
   font-size: 3em;
 }
 
-h2 {
+h2:not(#about-site) {
   font-weight: 300;
   font-size: 2.5em;
 }
 
-h3 {
+h3:not(#about-site) {
   font-weight: 300;
   font-size: 2.25em;
 }
 
-h4 {
+h4:not(#about-site) {
   font-weight: 700;
   font-size: 2em;
 }
 
-h5 {
+h5:not(#about-site) {
   font-weight: 400;
   font-size: 1.5em;
 }
 
-h6 {
+h6:not(#about-site) {
   font-weight: 400;
   font-size: 1.25em;
 }
 
-p {
+p:not(#about-site) {
   font-weight: 300;
   font-size: 1.05em;
 }
@@ -111,6 +111,7 @@ body {
 
 .bkImg-content p {
   text-align: left;
+  font-family: 'Roboto', sans-serif;
 }
 
 .bkImg-button {
@@ -136,6 +137,7 @@ a .bkImg-button:hover {
 .bkImg-content a,
 .bkSolid-content-left a {
   text-align: center;
+  color: #fff;
 }
 
 .bkSolid-container {
@@ -405,6 +407,10 @@ a .bkImg-button:hover {
   -webkit-transition: all .25s ease;
        -o-transition: all .25s ease;
           transition: all .25s ease;
+}
+
+.pf-content {
+  width: 100%;
 }
 
 @media screen and (max-width: 992px) {
