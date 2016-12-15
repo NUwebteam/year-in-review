@@ -8,8 +8,8 @@ $(document).ready(function() {
   var imageArray = [];
   var articlesArray = [];
 
-  $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
-  // $.get('./year-in-review-test.csv', function (data) {
+  // $.get('http://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
+  $.get('./year-in-review-test.csv', function (data) {
 
     var articles = $.csv.toObjects(data);
 
@@ -276,7 +276,7 @@ $(document).ready(function() {
     }
 
     for (var e = 0; e < articlesArray.length; e++) {
-      if (e === 3 ) {
+      if (e === 4 ) {
         articlesArray.insert(e, facesArray);
       } else if ( e === 6 ){
         articlesArray.insert(e, gridArray);
@@ -284,7 +284,7 @@ $(document).ready(function() {
     }
 
     for (var i = 0; i < articlesArray.length; i++) {
-      if (i === 3 ) {
+      if (i === 4 ) {
         html += facesTemplate(facesArray);
       } else if ( i === 6 ) {
          html += gridTemplate(gridArray);
