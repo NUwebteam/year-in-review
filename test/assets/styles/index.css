@@ -1,40 +1,40 @@
-body:not(#about-site) {
+body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   color: #000;
 }
 
-h1:not(#about-site) {
+h1 {
   font-weight: 100;
   font-size: 3em;
 }
 
-h2:not(#about-site) {
+h2 {
   font-weight: 300;
   font-size: 2.5em;
 }
 
-h3:not(#about-site) {
+h3 {
   font-weight: 300;
   font-size: 2.25em;
 }
 
-h4:not(#about-site) {
+h4 {
   font-weight: 700;
   font-size: 2em;
 }
 
-h5:not(#about-site) {
+h5 {
   font-weight: 400;
   font-size: 1.5em;
 }
 
-h6:not(#about-site) {
+h6 {
   font-weight: 400;
   font-size: 1.25em;
 }
 
-p:not(#about-site) {
+p {
   font-weight: 300;
   font-size: 1.05em;
 }
@@ -99,6 +99,10 @@ body {
   text-align: center;
 }
 
+.bkImg-content-container .bkImg-button {
+  color: #fff;
+}
+
 .bkImg-content {
   width: 50%;
   margin-left: 25%;
@@ -132,6 +136,10 @@ a .bkImg-button:hover {
   color: #fff;
 }
 
+.bkImg-content .bkImg-button {
+  color: #fff;
+}
+
 .bkSolid-container {
   background-color: #fff;
   width: 100%;
@@ -152,13 +160,22 @@ a .bkImg-button:hover {
   padding: 0px 10px;
 }
 
+.bkSolid-content-left p {
+  font-family: 'Roboto', sans-serif;
+}
+
 .bkSolid-content-left h3,
 .bkSolidleft-content-right h3 {
   margin-bottom: 30px;
 }
 
+.bkSolidleft-content-right .bkImg-button {
+  color: #fff;
+}
+
 .bkSolidLeft-paragraph {
   margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .bkSolidleft-content-left {
@@ -221,6 +238,10 @@ a .bkImg-button:hover {
   margin-bottom: 50px;
 }
 
+.faces-content .bkImg-button {
+  color: #fff;
+}
+
 .video-container {
   position: relative;
   background-color: #000;
@@ -250,6 +271,10 @@ a .bkImg-button:hover {
   width: 100%;
   height: 100%;
   padding-top: 80px;
+  color: #fff;
+}
+
+.video-content .bkImg-button {
   color: #fff;
 }
 
@@ -328,6 +353,7 @@ a .bkImg-button:hover {
 .bkImg-2-content p {
   text-align: left;
   margin-top: 150px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .bkImg-2-arrow {
@@ -371,6 +397,11 @@ a .bkImg-button:hover {
   width: 100%;
   text-align: left;
   padding: 5px 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.image-content p {
+  font-family: 'Roboto', sans-serif;
 }
 
 a:hover .bkImg-2-arrow {
@@ -385,6 +416,41 @@ a .bkImg-button:hover {
 
 .pf-content {
   width: 100%;
+}
+
+#about-site h4 {
+  font-family: Baskerville, Garamond, "Palatino Linotype", Georgia, "Times New Roman", serif;
+  font-size: 1.2em;
+  margin-bottom: 0.6em;
+  font-weight: 100;
+}
+
+#about-site h4 a {
+  color: #C00;
+}
+
+.about-news p, p.about-news {
+  font-size: 13px;
+  line-height: 130%;
+  padding-right: 10px;
+  color: #7F7F7F;
+  font-family: Baskerville, Garamond, "Palatino Linotype", Georgia, "Times New Roman", serif;
+}
+
+#about-site table button {
+  border: 1px solid #ccc;
+  border-color: #ccc #ccc #bbb #ccc;
+  border-radius: 3px;
+  background: #fafafa;
+  box-shadow: inset 0 2px 1px #fff;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  font-size: 12px;
+  font-size: 1.4rem;
+  padding: 1.12em 1.5em .88em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  padding-bottom: 1.12em;
 }
 
 @media screen and (max-width: 992px) {
