@@ -78,6 +78,13 @@
   .image-content p {
     font-size: .9em
   }
+  .grid-numbers-wrapper {
+    width: 50% !important;
+  }
+  .grid-numbers-content {
+    min-height: 350px;
+    padding: 80px 0 0 10px;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -373,5 +380,14 @@
 
   .image-content p {
     display: none;
+  }
+
+  .grid-numbers-wrapper {
+    width: 100% !important;
+  }
+
+  .grid-numbers-content {
+    min-height: 300px;
+    padding: 60px 0 0 10px;
   }
 }

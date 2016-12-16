@@ -106,7 +106,7 @@ body {
 
 .section-container h1 {
   margin: 0px;
-  padding: 30px 0px;
+  padding: 20px 0px 40px 0px;
 }
 
 .bkImg-container {
@@ -485,6 +485,41 @@ a .bkImg-button:hover {
   font-family: 'Roboto', sans-serif;
 }
 
+.grid-numbers-container {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.grid-numbers-wrapper {
+  float: left;
+  position: relative;
+  height: 100%;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.grid-numbers-content {
+  margin: 0px auto;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  padding: 100px 0px 0px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.grid-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 30px;
+  background-color: white;
+  z-index: 10000;
+  color: #000;
+}
+
 a:hover .bkImg-2-arrow {
   -webkit-transform: scale(1.25);
       -ms-transform: scale(1.25);
@@ -624,6 +659,15 @@ a .bkImg-button:hover {
 
   .image-content p {
     font-size: 0.9em;
+  }
+
+  .grid-numbers-wrapper {
+    width: 50% !important;
+  }
+
+  .grid-numbers-content {
+    min-height: 350px;
+    padding: 80px 0 0 10px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -916,5 +960,14 @@ a .bkImg-button:hover {
 
   .image-content p {
     display: none;
+  }
+
+  .grid-numbers-wrapper {
+    width: 100% !important;
+  }
+
+  .grid-numbers-content {
+    min-height: 300px;
+    padding: 60px 0 0 10px;
   }
 }

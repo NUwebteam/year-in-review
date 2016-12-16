@@ -27,59 +27,26 @@ $(document).ready(function() {
 
         ret += '<div class="grid-container clearfix">';
         for (var i = 0; i < gridArray.length; i++) {
+          ret += '<a href="'+gridArray[i].article_url+'" target="_blank">';
           if (gridArray.length % 4 === 0) {
-            ret += '<a href="'+gridArray[i].article_url+'" target="_blank">';
             ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].image_or_video_poster_url+') no-repeat center center;background-size:cover;width:25%;">';
-            ret += '<div class="grid-content-container">';
-            ret += '<div class="grid-content">';
-            ret += '<h1>'+gridArray[i].headline+'</h1>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</a>';
           } else if (gridArray.length % 3 === 0) {
-            ret += '<a href="'+gridArray[i].article_url+'" target="_blank">';
             ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].image_or_video_poster_url+') no-repeat center center;background-size:cover;width:33.33%;">';
-            ret += '<div class="grid-content-container">';
-            ret += '<div class="grid-content">';
-            ret += '<h1>'+gridArray[i].headline+'</h1>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</a>';
           } else if (gridArray.length % 2 === 0) {
-            ret += '<a href="'+gridArray[i].article_url+'" target="_blank">';
             ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].image_or_video_poster_url+') no-repeat center center;background-size:cover;width:50%;">';
-            ret += '<div class="grid-content-container">';
-            ret += '<div class="grid-content">';
-            ret += '<h1>'+gridArray[i].headline+'</h1>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</a>';
           } else if (gridArray.length % 7 === 0) {
-            ret += '<a href="'+gridArray[i].article_url+'" target="_blank">';
             ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].image_or_video_poster_url+') no-repeat center center;background-size:cover;width:25%;">';
-            ret += '<div class="grid-content-container">';
-            ret += '<div class="grid-content">';
-            ret += '<h1>'+gridArray[i].headline+'</h1>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</a>';
           } else {
-            ret += '<a href="'+gridArray[i].article_url+'" target="_blank">';
             ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].imageUrl+') no-repeat center center;background-size:cover;width:33.33%;">';
-            ret += '<div class="grid-content-container">';
-            ret += '<div class="grid-content">';
-            ret += '<h1>'+gridArray[i].headline+'</h1>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</div>';
-            ret += '</a>';
           }
+          ret += '<div class="grid-content-container">';
+          ret += '<div class="grid-content">';
+          ret += '<h1>'+gridArray[i].headline+'</h1>';
+          ret += '</div>';
+          ret += '</div>';
+          ret += '</div>';
+          ret += '</a>';
         }
-
         ret += '</div>';
 
       return ret;
@@ -93,24 +60,6 @@ $(document).ready(function() {
       var ret = '';
 
       ret += '<div class="bkImg-container clearfix">';
-      // if (article.video_url) {
-      //   ret += '<div class="bkVideo-container clearfix">';
-      //   ret += '<video loop muted autoplay poster="'+article.image_or_video_poster_url+'"';
-      //   ret += 'class="video-wrapper" style="margin-bottom: -5px;">';
-      //   if ($(window).width() > 767) {
-      //     ret += '<source src="'+article.video_url+'" type="video/mp4" class="video-source">';
-      //   }
-      //   ret += '</video>';
-      //   ret += '<div class="bkVideo-content-container clearfix">';
-      //   ret += '<div class="bkVideo-content clearfix">';
-      //   ret += '<h1>' + article.headline + '</h1>';
-      //   ret += '<h3>'+article.topic+'</h3>';
-      //   ret += '<p>' + article.blurb + '</p>';
-      //   ret += '<a class="bkImg-button" href="'+article.article_url+'" target="_blank">Explore Article</a>';
-      //   ret += '</div>';
-      //   ret += '</div>';
-      //   ret += '</div>';
-      // } else {
       ret += '<div class="bkImg-wrapper clearfix" style="background:url('+article.image_or_video_poster_url+') no-repeat center center;background-size:cover;">';
       ret += '<div class="bkImg-content-container clearfix">';
       ret += '<div class="bkImg-content clearfix">';
@@ -270,7 +219,40 @@ $(document).ready(function() {
       ret += '</div>';
 
       return ret;
-    }
+    };
+
+    var numberGridTemplate = function(article, index, total) {
+      var ret = '';
+
+      ret += '<div class="grid-numbers-container">';
+      if (total % 4 === 0) {
+        ret += '<div class="grid-numbers-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
+      } else if (total % 3 === 0) {
+        ret += '<div class="grid-numbers-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:33%;">';
+      } else if (total % 2 === 0) {
+        ret += '<div class="grid-numbers-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
+      }
+      ret += '<div class="grid-number">';
+      ret += '<h5>'+index+'</h5>';
+      ret += '</div>';
+      ret += '<div class="grid-numbers-content">';
+      if (article.short_headline) {
+        ret += '<h3'+article.short_headline+'</h3>';
+      } else {
+        ret += '<h3>'+article.headline+'</h3>';
+      }
+      if (article.blurb) {
+        ret += '<h5>'+article.blurb+'</h5>';
+      }
+      ret += '</div>';
+      ret += '<a href="'+article.article_url+'">';
+      ret += '<img class="bkImg-2-arrow" src="assets/images/arrow.png" alt="Arrow">';
+      ret += '</a>';
+      ret += '</div>';
+      ret += '</div>';
+
+      return ret;
+    };
 
     Array.prototype.insert = function (index, item) {
       this.splice(index, 0, item);
@@ -389,9 +371,21 @@ $(document).ready(function() {
       html += '</div>';
     };
 
+    var renderMostRead = function(articles) {
+      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<h1>Most Read Articles</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        var index = i + 1;
+        var total = articles.length;
+        html += numberGridTemplate(articles[i], index, total);
+      }
+      html += '</div>';
+    }
+
 
     renderArticles(articlesArray);
     renderFaces(facesArray);
+    renderMostRead(researchArray);
 
     $('#content-template').html(html);
 
