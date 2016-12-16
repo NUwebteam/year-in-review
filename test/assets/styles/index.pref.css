@@ -466,6 +466,46 @@ a .bkImg-button:hover {
   min-height: 450px;
 }
 
+.tile-slide {
+  float: left;
+  width: 100%;
+  min-height: 300px;
+}
+
+.tile-content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.tile-content {
+  width: 80%;
+  min-height: 300px;
+  padding-top: 25px;
+  margin-left: 10%;
+}
+
+.tile-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 15px 45px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.tile-number h3 {
+  line-height: 225px;
+}
+
+.tile-content p {
+  margin-bottom: 50px;
+}
+
 .image-content-container {
   float: left;
   width: 30%;
@@ -538,6 +578,79 @@ a .bkImg-button:hover {
   -webkit-transition: all .25s ease;
        -o-transition: all .25s ease;
           transition: all .25s ease;
+}
+
+.text-image-wrapper {
+  height: 100%;
+  width: 100%;
+  float: left;
+}
+
+.tile-slide {
+  float: left;
+  width: 100%;
+}
+
+.teaser-container {
+  width: 100%;
+  height: 100%;
+}
+
+.teaser-wrapper {
+  float: left;
+  height: 100%;
+  width: 100%;
+}
+
+.teaser-content-container {
+  width: 100%;
+  min-height: 400px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.teaser-content-container:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all .25s ease;
+       -o-transition: all .25s ease;
+          transition: all .25s ease;
+}
+
+.teaser-content {
+  padding: 30px 0px;
+}
+
+.list-container {
+  width: 100%;
+  height: 100%;
+}
+
+.list-content-container {
+  width: 75%;
+  margin: 2px 0px 2px 12.5%;
+  height: 100%;
+  background-color: #fff;
+  text-align: center;
+  color: #000;
+  border-radius: 4px;
+}
+
+.list-content-container:hover {
+  width: 100%;
+  margin: 2px 0px 2px 0px;
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  -webkit-transition: all .25s ease;
+       -o-transition: all .25s ease;
+          transition: all .25s ease;
+}
+
+.list-content {
+  width: 100%;
+  padding: 15px 0px;
 }
 
 .pf-content {
@@ -668,6 +781,14 @@ a .bkImg-button:hover {
   .grid-numbers-content {
     min-height: 350px;
     padding: 80px 0 0 10px;
+  }
+
+  .teaser-wrapper {
+    width: 100% !important;
+  }
+
+  .teaser-content-container {
+    min-height: 125px;
   }
 }
 @media screen and (max-width: 850px) {

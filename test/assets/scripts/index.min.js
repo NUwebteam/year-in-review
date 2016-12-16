@@ -245,7 +245,7 @@ $(document).ready(function() {
         ret += '<h5>'+article.blurb+'</h5>';
       }
       ret += '</div>';
-      ret += '<a href="'+article.article_url+'">';
+      ret += '<a href="'+article.article_url+'" target="_blank">';
       ret += '<img class="bkImg-2-arrow" src="assets/images/arrow.png" alt="Arrow">';
       ret += '</a>';
       ret += '</div>';
@@ -253,6 +253,100 @@ $(document).ready(function() {
 
       return ret;
     };
+
+    var tileSliderTemplate = function(article, index) {
+      var ret = '';
+
+      ret += '<div class="image-wrapper">';
+      ret += '<div class="tile-slide" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:100% auto;">';
+      ret += '<div class="tile-content-container clearfix">';
+      ret += '<div class="tile-number">';
+      ret += '<h3>'+index+'</h3>';
+      ret += '</div>';
+      ret += '<div class="tile-content clearfix">';
+      ret += '<h3>'+article.headline+'</h3>';
+      ret += '<p>'+article.blurb+'</p>';
+      ret += '<a class="bkImg-button" href="'+article.article_url+'" target="_blank">Explore Article</a>';
+      ret += '</div>';
+      ret += '</div>';
+      ret += '</div>';
+      ret += '</div>';
+
+      return ret;
+    };
+
+    // var textImageSliderTemplate = function(article, index) {
+    //   var ret = '';
+    //
+    //   ret += '<div class="text-image-wrapper">';
+    //   ret += '<div class="text-image-slide" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:100% auto;">';
+    //   ret += '</div>';
+    //   ret += '</div>';
+    //
+    //   return ret;
+    // };
+
+    var teaserTemplate = function(article, total) {
+      var ret = '';
+
+      ret += '<div class="teaser-container">';
+      ret += '<a href="'+article.article_url+'" target="_blank">';
+      if (total % 4 === 0) {
+        ret += '<div class="teaser-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
+      } else if (total % 3 === 0) {
+        ret += '<div class="teaser-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:33%;">';
+      } else if (total % 2 === 0) {
+        ret += '<div class="teaser-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
+      }
+      ret += '<div class="teaser-content-container">'
+      ret += '<div class="teaser-content clearfix">';
+      if (article.short_headline) {
+        ret += '<h3'+article.short_headline+'</h3>';
+      } else {
+        ret += '<h3>'+article.headline+'</h3>';
+      }
+      if (article.blurb) {
+        ret += '<h5>'+article.blurb+'</h5>';
+      }
+      ret += '</div>';
+      ret += '</div>';
+      ret += '</div>';
+      ret += '</a>';
+      ret += '</div>';
+
+      return ret;
+    };
+
+    var listTemplate = function(article) {
+      var ret = '';
+
+      ret += '<div class="list-container">';
+      ret += '<a href="'+article.article_url+'" target="_blank">';
+      // if (total % 4 === 0) {
+      //   ret += '<div class="list-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
+      // } else if (total % 3 === 0) {
+      //   ret += '<div class="list-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:33%;">';
+      // } else if (total % 2 === 0) {
+      //   ret += '<div class="teaser-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
+      // }
+      ret += '<div class="list-content-container">'
+      ret += '<div class="list-content clearfix">';
+      if (article.short_headline) {
+        ret += '<h4'+article.short_headline+'</h4>';
+      } else {
+        ret += '<h4>'+article.headline+'</h4>';
+      }
+      if (article.blurb) {
+        ret += '<h6>'+article.blurb+'</h6>';
+      }
+      ret += '</div>';
+      ret += '</div>';
+      ret += '</div>';
+      ret += '</a>';
+
+      return ret;
+    };
+
 
     Array.prototype.insert = function (index, item) {
       this.splice(index, 0, item);
@@ -353,7 +447,7 @@ $(document).ready(function() {
         } else if (articles[i].template === 'bkground-white-left-img') {
           html += bkSolidLeftTemplate(articles[i]);
         } else if (articles[i].template === 'video') {
-          html += videoTemplate(articlesArray);
+          html += videoTemplate(articles[i]);
         } else if (articles[i].template === 'bkground-img-2') {
           html += bkImg_2_template(articles[i]);
         }
@@ -380,22 +474,67 @@ $(document).ready(function() {
         html += numberGridTemplate(articles[i], index, total);
       }
       html += '</div>';
+    };
+
+    var renderMostReadSlider = function(articles) {
+      html += '<div class="section-container section-container-white clearfix">';
+      html += '<h1>Most Read Articles - Slider</h1>';
+      html += '<div id="tile-slider" class="image-container clearfix">';
+      for (var i = 0; i < articles.length; i++) {
+        var index = i + 1;
+        html += tileSliderTemplate(articles[i], index);
+      }
+      html += '</div>';
+      html += '</div>';
+    };
+
+    var renderTeaseTemplate = function(articles) {
+      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<h1>Teaser Section</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        var total = articles.length;
+        html += teaserTemplate(articles[i], total);
+      }
+      // html += teaserTemplate(articles);
+      html += '</div>';
+    };
+
+    var renderListTemplate = function(articles) {
+      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<h1>List Section</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        html += listTemplate(articles[i]);
+      }
+      html += '</div>';
     }
 
 
     renderArticles(articlesArray);
     renderFaces(facesArray);
     renderMostRead(researchArray);
+    renderMostReadSlider(researchArray);
+    renderTeaseTemplate(researchArray);
+    renderListTemplate(researchArray);
 
     $('#content-template').html(html);
 
-    $('.image-container').slick({
+    $('image-container').slick({
       infinite: true,
       adaptiveHeight: false,
       speed: 500,
       fade: true,
       cssEase: 'linear',
       autoplay: true,
+      autoplaySpeed: 4000,
+      });
+
+    $('#tile-slider').slick({
+      infinite: true,
+      adaptiveHeight: false,
+      speed: 500,
+      cssEase: 'linear',
+      autoplay: true,
+      arrows: true,
       autoplaySpeed: 4000,
       });
   });

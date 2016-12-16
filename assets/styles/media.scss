@@ -85,6 +85,12 @@
     min-height: 350px;
     padding: 80px 0 0 10px;
   }
+  .teaser-wrapper {
+    width: 100% !important;
+  }
+  .teaser-content-container {
+    min-height: 125px;
+  }
 }
 
 @media screen and (max-width: 850px) {
