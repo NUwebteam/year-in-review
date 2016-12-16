@@ -1,3 +1,9 @@
+@media screen and (max-width: 1135px) {
+  .bkVideo-content {
+    padding-top: 0px;
+  }
+}
+
 @media screen and (max-width: 992px){
   body {
     font-size: 15px;
@@ -10,6 +16,10 @@
   .bkImg-content {
     width: 60%;
     margin-left: 20%;
+  }
+
+  .bkVideo-content {
+    padding-top: 100px;
   }
 
   .bkImg-2-content {
@@ -194,6 +204,11 @@
     margin-left: 12.5%;
   }
 
+  .bkVideo-content {
+    padding-top: 50px;
+  }
+
+
   .bkImg-2-content {
     width: 60%;
     padding-left: 10px;
@@ -298,6 +313,10 @@
       width: 90%;
       margin-left: 5%;
     }
+
+  .bkVideo-content {
+    padding-top: 0px;
+  }
 
   .bkImg-2-content {
     width: 75%;
