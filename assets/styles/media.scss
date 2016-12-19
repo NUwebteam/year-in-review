@@ -2,15 +2,24 @@
   .bkVideo-content {
     padding-top: 0px;
   }
+
+  .hero-content {
+    padding-top: 2vw;
+  }
 }
 
 @media screen and (max-width: 992px){
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero-container {
     font-size: 1em;
+  }
+
+  .hero-content {
+    padding-top: 15vw;
+    font-size: 1.5em;
   }
 
   .bkImg-content {
@@ -285,9 +294,9 @@
   }
 
   .grid-content {
-    width: 60%;
+    width: 95%;
+    font-size: .7em;
   }
-
 
   .image-slide {
     width: 100%;
@@ -319,6 +328,10 @@
 
 
 @media screen and (max-width: 600px) {
+  .hero-content {
+    padding-top: 15vw;
+    font-size: 1em;
+  }
   .content-container {
     font-size: .95em;
   }
@@ -395,5 +408,17 @@
   .grid-numbers-content {
     min-height: 300px;
     padding: 60px 0 0 10px;
+  }
+
+  .bkSolid-content-left,
+  .bkSolidleft-content-right {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  .bkSolid-content-left h1,
+  .bkSolidleft-content-right h1,
+  .bkImg-content h1 {
+    text-align: left;
   }
 }

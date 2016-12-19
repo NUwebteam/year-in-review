@@ -29,19 +29,25 @@ body {
 }
 
 .hero-container {
+  position: relative;
   width: 100%;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 100;
   text-align: center;
   // background-color: $black;
   color: $white;
-  padding: 5% 0;
-  background: url('https://www.google.com/trends/2014/static/images/hero-landing-1440.jpg') no-repeat center center;
-  background-size: cover;
+  // background: url('https://www.google.com/trends/2014/static/images/hero-landing-1440.jpg') no-repeat center center;
+  // background-size: cover;
 }
 
 .hero-content {
-  // font-size: 1em;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.6);
+  padding-top: 5vw;
 }
 
 .section-container-white,
@@ -65,9 +71,11 @@ body {
   color: $white;
 }
 
-.section-container h1 {
+.section-container > h1 {
   margin: 0px;
   padding: 20px 0px 40px 0px;
+  font-weight: 100;
+  font-size: 4em;
 }
 
 // bkImg Template
@@ -88,7 +96,7 @@ body {
 .bkImg-content-container {
   width: 100%;
   padding: 30px 0px 90px 0px;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, .7);
   text-align: center;
 }
 
@@ -320,7 +328,7 @@ a .bkImg-button:hover {
   right: 0;
   left: 0;
   bottom: 0px;
-  background-color: rgba(0, 0, 0, .35);
+  background-color: rgba(0, 0, 0, .55);
   text-align: center;
 }
 
@@ -366,7 +374,7 @@ a .bkImg-button:hover {
 .grid-content-container {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, .55);
   font-size: .5em;
 }
 
@@ -396,7 +404,7 @@ a .bkImg-button:hover {
   position: relative;
   width: 100%;
   // padding: 0px 0px 150px 0px;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.6);
 }
 
 .bkImg-2-content {
@@ -536,7 +544,7 @@ a .bkImg-button:hover {
   height: 100%;
   min-height: 500px;
   padding: 100px 0px 0px 10px;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.6);
   color: $white;
 }
 
@@ -588,7 +596,7 @@ a .bkImg-button:hover {
   width: 100%;
   min-height: 400px;
   color: $white;
-  background-color: rgba(0,0,0,.4);
+  background-color: rgba(0,0,0,.6);
   text-align: center;
 }
 
@@ -598,7 +606,7 @@ a .bkImg-button:hover {
 }
 
 .teaser-content {
-  padding: 30px 0px;
+  padding: 30px 5px;
 }
 
 .list-container {
@@ -617,8 +625,8 @@ a .bkImg-button:hover {
 }
 
 .list-content-container:hover {
-  width: 100%;
-  margin: 2px 0px 2px 0px;
+  width: 80%;
+  margin-left: 10%;
   background-color: $black;
   text-align: center;
   color: $white;
@@ -673,4 +681,8 @@ a .bkImg-button:hover {
   text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
   font-weight: bold;
   padding-bottom: 1.12em;
+}
+
+video {
+  margin-bottom: -5px !important;
 }

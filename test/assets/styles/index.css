@@ -15,7 +15,7 @@ h2 {
 }
 
 h3 {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 2.25em;
 }
 
@@ -25,12 +25,12 @@ h4 {
 }
 
 h5 {
-  font-weight: 400;
+  font-weight: 100;
   font-size: 1.5em;
 }
 
 h6 {
-  font-weight: 400;
+  font-weight: 100;
   font-size: 1.25em;
 }
 
@@ -70,14 +70,22 @@ body {
 }
 
 .hero-container {
+  position: relative;
   width: 100%;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 100;
   text-align: center;
   color: #fff;
-  padding: 5% 0;
-  background: url("https://www.google.com/trends/2014/static/images/hero-landing-1440.jpg") no-repeat center center;
-  background-size: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 5vw;
 }
 
 .section-container-white,
@@ -101,9 +109,11 @@ body {
   color: #fff;
 }
 
-.section-container h1 {
+.section-container > h1 {
   margin: 0px;
   padding: 20px 0px 40px 0px;
+  font-weight: 100;
+  font-size: 4em;
 }
 
 .bkImg-container {
@@ -121,7 +131,7 @@ body {
 .bkImg-content-container {
   width: 100%;
   padding: 30px 0px 90px 0px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
 }
 
@@ -328,7 +338,7 @@ a .bkImg-button:hover {
   right: 0;
   left: 0;
   bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.55);
   text-align: center;
 }
 
@@ -371,7 +381,7 @@ a .bkImg-button:hover {
 .grid-content-container {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.55);
   font-size: .5em;
 }
 
@@ -397,7 +407,7 @@ a .bkImg-button:hover {
 .bkImg-2-content-container {
   position: relative;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .bkImg-2-content {
@@ -529,7 +539,7 @@ a .bkImg-button:hover {
   height: 100%;
   min-height: 500px;
   padding: 100px 0px 0px 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
 }
 
@@ -579,7 +589,7 @@ a .bkImg-button:hover {
   width: 100%;
   min-height: 400px;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
 }
 
@@ -589,7 +599,7 @@ a .bkImg-button:hover {
 }
 
 .teaser-content {
-  padding: 30px 0px;
+  padding: 30px 5px;
 }
 
 .list-container {
@@ -608,8 +618,8 @@ a .bkImg-button:hover {
 }
 
 .list-content-container:hover {
-  width: 100%;
-  margin: 2px 0px 2px 0px;
+  width: 80%;
+  margin-left: 10%;
   background-color: #000;
   text-align: center;
   color: #fff;
@@ -661,18 +671,31 @@ a .bkImg-button:hover {
   padding-bottom: 1.12em;
 }
 
+video {
+  margin-bottom: -5px !important;
+}
+
 @media screen and (max-width: 1135px) {
   .bkVideo-content {
     padding-top: 0px;
   }
+
+  .hero-content {
+    padding-top: 2vw;
+  }
 }
 @media screen and (max-width: 992px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .hero-container {
     font-size: 1em;
+  }
+
+  .hero-content {
+    padding-top: 15vw;
+    font-size: 1.5em;
   }
 
   .bkImg-content {
@@ -943,7 +966,8 @@ a .bkImg-button:hover {
   }
 
   .grid-content {
-    width: 60%;
+    width: 95%;
+    font-size: .7em;
   }
 
   .image-slide {
@@ -974,6 +998,11 @@ a .bkImg-button:hover {
   }
 }
 @media screen and (max-width: 600px) {
+  .hero-content {
+    padding-top: 15vw;
+    font-size: 1em;
+  }
+
   .content-container {
     font-size: .95em;
   }
@@ -1058,6 +1087,18 @@ a .bkImg-button:hover {
   .grid-numbers-content {
     min-height: 300px;
     padding: 60px 0 0 10px;
+  }
+
+  .bkSolid-content-left,
+  .bkSolidleft-content-right {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  .bkSolid-content-left h1,
+  .bkSolidleft-content-right h1,
+  .bkImg-content h1 {
+    text-align: left;
   }
 }
 

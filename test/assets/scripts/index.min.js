@@ -21,32 +21,32 @@ $(document).ready(function() {
 
     var articles = $.csv.toObjects(data);
 
-    var gridTemplate = function(gridArray) {
+    var gridTemplate = function(article, total) {
 
       var ret = '';
 
-        ret += '<div class="grid-container clearfix">';
-        for (var i = 0; i < gridArray.length; i++) {
-          ret += '<a href="'+gridArray[i].article_url+'" target="_blank">';
-          if (gridArray.length % 4 === 0) {
-            ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].image_or_video_poster_url+') no-repeat center center;background-size:cover;width:25%;">';
-          } else if (gridArray.length % 3 === 0) {
-            ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].image_or_video_poster_url+') no-repeat center center;background-size:cover;width:33.33%;">';
-          } else if (gridArray.length % 2 === 0) {
-            ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].image_or_video_poster_url+') no-repeat center center;background-size:cover;width:50%;">';
-          } else if (gridArray.length % 7 === 0) {
-            ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].image_or_video_poster_url+') no-repeat center center;background-size:cover;width:25%;">';
-          } else {
-            ret += '<div class="grid-wrapper" style="background:url('+gridArray[i].imageUrl+') no-repeat center center;background-size:cover;width:33.33%;">';
-          }
-          ret += '<div class="grid-content-container">';
-          ret += '<div class="grid-content">';
-          ret += '<h1>'+gridArray[i].headline+'</h1>';
-          ret += '</div>';
-          ret += '</div>';
-          ret += '</div>';
-          ret += '</a>';
+        ret += '<div class="grid-container">';
+        // for (var i = 0; i < gridArray.length; i++) {
+        ret += '<a href="'+article.article_url+'" target="_blank">';
+        if (total % 4 === 0) {
+          ret += '<div class="grid-wrapper" style="background:url('+article.image_or_video_poster_url+') no-repeat center center;background-size:cover;width:25%;">';
+        } else if (total % 3 === 0) {
+          ret += '<div class="grid-wrapper" style="background:url('+article.image_or_video_poster_url+') no-repeat center center;background-size:cover;width:33.33%;">';
+        } else if (total % 2 === 0) {
+          ret += '<div class="grid-wrapper" style="background:url('+article.image_or_video_poster_url+') no-repeat center center;background-size:cover;width:50%;">';
+        } else if (total % 7 === 0) {
+          ret += '<div class="grid-wrapper" style="background:url('+article.image_or_video_poster_url+') no-repeat center center;background-size:cover;width:25%;">';
+        } else {
+          ret += '<div class="grid-wrapper" style="background:url('+article.imageUrl+') no-repeat center center;background-size:cover;width:50%;">';
         }
+        ret += '<div class="grid-content-container">';
+        ret += '<div class="grid-content">';
+        ret += '<h1>'+article.headline+'</h1>';
+        ret += '</div>';
+        ret += '</div>';
+        ret += '</div>';
+        ret += '</a>';
+        // }
         ret += '</div>';
 
       return ret;
@@ -93,7 +93,7 @@ $(document).ready(function() {
       ret +='<p>' + article.blurb + '</p>';
       ret +='</div>';
       ret +='<a href="'+article.article_url+'" target="_blank">';
-      ret +='<img class="bkImg-2-arrow" src="/news/wp-content/themes/nu-news-002/year-in-review/assets/images/arrow.png" alt="Arrow">';
+      ret +='<img class="bkImg-2-arrow" src="assets/images/arrow.png" alt="Arrow">';
       ret +='</a>';
       ret +='</div>';
       ret +='</div>';
@@ -183,14 +183,21 @@ $(document).ready(function() {
       ret += '<div class="video-container">';
       ret += '<video loop muted autoplay poster="'+article.image_or_video_poster_url+'" class="video-wrapper" style="margin-bottom: -5px;">';
       if ($(window).width() > 767) {
+        // ret += '<source src="'+article.video_url+'" type="video/mp4" class="video-source">';
         ret += '<source src="'+article.video_url+'" type="video/mp4" class="video-source">';
       }
       ret += '</video>';
       ret += '<div class="video-content-container">';
       ret += '<div class="video-content">';
-      ret += '<h1>'+article.headline+'</h1>';
-      ret += '<h3>'+article.topic+'</h3>';
-      ret += '<a class="bkImg-button" href="'+article.article_url+'" target="_blank">Explore Article</a>';
+      if (article.headline) {
+        ret += '<h1>'+article.headline+'</h1>';
+      }
+      if (article.topic) {
+        ret += '<h3>'+article.topic+'</h3>';
+      }
+      if (article.article_url) {
+        ret += '<a class="bkImg-button" href="'+article.article_url+'" target="_blank">Explore Article</a>';
+      }
       ret += '</div>';
       ret += '</div>';
       ret += '</div>';
@@ -199,19 +206,19 @@ $(document).ready(function() {
 
     };
 
-    var imageTemplate = function(imageArray) {
+    var imageTemplate = function(articles) {
       var ret = '';
 
       ret += '<div class="image-container clearfix">';
-      for ( var i = 0; i < imageArray.length; i++) {
+      for ( var i = 0; i < articles.length; i++) {
         ret += '<div class="image-wrapper">';
-        ret += '<div class="image-slide" style="background:url('+imageArray[i].image_or_video_poster_url+')no-repeat center center;background-size:100% auto;">';
+        ret += '<div class="image-slide" style="background:url('+articles[i].image_or_video_poster_url+')no-repeat center center;background-size:100% auto;">';
         ret += '</div>';
         ret += '<div class="image-content-container">';
         ret += '<div class="image-content">';
-        ret += '<h2>'+imageArray[i].headline+'</h2>';
-        ret += '<h4>'+imageArray[i].topic+'</h4>';
-        ret += '<p>'+imageArray[i].blurb+'</p>';
+        ret += '<h2>'+articles[i].headline+'</h2>';
+        ret += '<h4>'+articles[i].topic+'</h4>';
+        ret += '<p>'+articles[i].blurb+'</p>';
         ret += '</div>';
         ret += '</div>';
         ret += '</div>';
@@ -230,7 +237,7 @@ $(document).ready(function() {
       } else if (total % 3 === 0) {
         ret += '<div class="grid-numbers-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:33%;">';
       } else if (total % 2 === 0) {
-        ret += '<div class="grid-numbers-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
+        ret += '<div class="grid-numbers-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:50%;">';
       }
       ret += '<div class="grid-number">';
       ret += '<h5>'+index+'</h5>';
@@ -301,12 +308,12 @@ $(document).ready(function() {
       ret += '<div class="teaser-content-container">'
       ret += '<div class="teaser-content clearfix">';
       if (article.short_headline) {
-        ret += '<h3'+article.short_headline+'</h3>';
+        ret += '<h5'+article.short_headline+'</h5>';
       } else {
-        ret += '<h3>'+article.headline+'</h3>';
+        ret += '<h5>'+article.headline+'</h5>';
       }
       if (article.blurb) {
-        ret += '<h5>'+article.blurb+'</h5>';
+        ret += '<h6>'+article.blurb+'</h6>';
       }
       ret += '</div>';
       ret += '</div>';
@@ -332,9 +339,9 @@ $(document).ready(function() {
       ret += '<div class="list-content-container">'
       ret += '<div class="list-content clearfix">';
       if (article.short_headline) {
-        ret += '<h4'+article.short_headline+'</h4>';
+        ret += '<h5>'+article.short_headline+'</h5>';
       } else {
-        ret += '<h4>'+article.headline+'</h4>';
+        ret += '<h5>'+article.headline+'</h5>';
       }
       if (article.blurb) {
         ret += '<h6>'+article.blurb+'</h6>';
@@ -435,10 +442,37 @@ $(document).ready(function() {
 
     // $('#content-template').html(html);
 
+    var renderHeader = function(data) {
+      html += '<div class="hero-container">';
+      html += '<video loop muted autoplay poster="assets/images/header.png" class="video-wrapper" style="margin-bottom: -5px;">';
+      if ($(window).width() > 767) {
+        html += '<source src="assets/images/header.mp4" type="video/mp4" class="video-source">';
+      }
+      html += '</video>';
+      html += '<div class="hero-content">';
+      html += '<h1> - 2016 In Review - </h1>';
+      html += '<h5> A Look Back at the year at Northeastern</h5>';
+      html += '</div>';
+      html += '</div>';
+      // ret += '<div class="video-container">';
+      // ret += '<video loop muted autoplay poster="'+article.image_or_video_poster_url+'" class="video-wrapper" style="margin-bottom: -5px;">';
+      // if ($(window).width() > 767) {
+      //   ret += '<source src="'+article.video_url+'" type="video/mp4" class="video-source">';
+      // }
+      // ret += '</video>';
+      // ret += '<div class="video-content-container">';
+      // ret += '<div class="video-content">';
+      // ret += '<h1>'+article.headline+'</h1>';
+      // ret += '<h3>'+article.topic+'</h3>';
+      // ret += '<a class="bkImg-button" href="'+article.article_url+'" target="_blank">Explore Article</a>';
+      // ret += '</div>';
+      // ret += '</div>';
+      // ret += '</div>';
+    };
+
     var renderArticles = function(articles) {
-      console.log(articles);
       html += '<div class="section-container section-container-white clearfix">';
-      html += '<h1>The Biggest Articles of the Year!</h1>';
+      html += '<h1>Explore Northeastern\'s biggest stories</h1>';
       for (var i = 0; i < articles.length; i++) {
         if (articles[i].template === 'bkground-img') {
           html += bkImgTemplate(articles[i]);
@@ -455,6 +489,22 @@ $(document).ready(function() {
       html += '</div>';
     };
 
+    var renderResearch = function(articles) {
+      // console.log(articles);
+      html += '<div class="section-container section-container-white clearfix">';
+      html += '<h1>Use-Inspired Research</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        var total = (articles.length - 1);
+        if (articles[i].template === 'video') {
+          html += videoTemplate(articles[i]);
+        } else if (articles[i].template === 'grid-layout') {
+          html += gridTemplate(articles[i], total);
+          // console.log(articles[i]);
+        }
+      }
+      html += '</div>';
+    }
+
     var renderFaces = function(faces) {
       html += '<div class="section-container section-container-faces clearfix">';
       html += '<h1>Faces of Northeastern</h1>';
@@ -467,7 +517,7 @@ $(document).ready(function() {
 
     var renderMostRead = function(articles) {
       html += '<div class="section-container section-container-grey clearfix">';
-      html += '<h1>Most Read Articles</h1>';
+      html += '<h1>Most Read Stories</h1>';
       for (var i = 0; i < articles.length; i++) {
         var index = i + 1;
         var total = articles.length;
@@ -508,17 +558,83 @@ $(document).ready(function() {
       html += '</div>';
     }
 
+    var renderCompetition = function(articles) {
+      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<h1>Students compete on the biggest stage</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        var total = articles.length;
+        html += teaserTemplate(articles[i], total);
+      }
+      html += '</div>';
+    }
 
+    var renderPartnerships = function(articles) {
+      html += '<div class="section-container section-container-white clearfix">';
+      html += '<h1>University establishes new partnerships at home and abroad</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        var total = articles.length;
+        html += teaserTemplate(articles[i], total);
+      }
+      html += '</div>';
+    }
+
+    var renderCampusUpdates = function(articles) {
+      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<h1>Campus Updates</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        html += bkImg_2_template(articles[i]);
+      }
+      html += '</div>';
+    }
+
+    var renderExploringWorld = function(articles) {
+      html += '<div class="section-container section-container-white clearfix">';
+      html += '<h1>Exploring the World</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        var total = 2;
+        html += gridTemplate(articles[i], total);
+      }
+      html += '</div>';
+    }
+
+    var renderGlobalStories = function(articles) {
+      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<h1>Major Global Stories</h1>';
+      for (var i = 0; i < articles.length; i++) {
+        var total = 2;
+        html += gridTemplate(articles[i], total);
+      }
+      html += '</div>';
+    }
+
+    var renderImages = function(articles) {
+      html += '<div class="section-container section-container-grey">';
+      html += '<h1>Top Photos of 2016</h1>';
+      html += imageTemplate(articles);
+      html += '</div>';
+    }
+
+
+
+    renderHeader();
     renderArticles(articlesArray);
+    renderMostRead(mostReadArray);
+    renderResearch(researchArray);
+    renderCompetition(competitionArray);
+    renderPartnerships(partnershipsArray);
+    renderCampusUpdates(campusArray);
+    renderExploringWorld(exploringArray);
+    renderGlobalStories(globalArray);
     renderFaces(facesArray);
-    renderMostRead(researchArray);
-    renderMostReadSlider(researchArray);
-    renderTeaseTemplate(researchArray);
-    renderListTemplate(researchArray);
+    renderImages(photosArray);
+    // renderMostReadSlider(researchArray);
+    // renderTeaseTemplate(researchArray);
+    // renderListTemplate(researchArray);
+
 
     $('#content-template').html(html);
 
-    $('image-container').slick({
+    $('.image-container').slick({
       infinite: true,
       adaptiveHeight: false,
       speed: 500,
