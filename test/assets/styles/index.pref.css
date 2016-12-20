@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 3em;
 }
 
@@ -15,7 +15,7 @@ h2 {
 }
 
 h3 {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 2.25em;
 }
 
@@ -25,12 +25,12 @@ h4 {
 }
 
 h5 {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 1.5em;
 }
 
 h6 {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 1.25em;
 }
 
@@ -95,7 +95,7 @@ body {
 .section-container-faces {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   background-color: #fff;
   color: #000;
@@ -114,7 +114,7 @@ body {
 .section-container > h1 {
   margin: 0px;
   padding: 20px 0px 40px 0px;
-  font-weight: 100;
+  font-weight: 700;
   font-size: 4em;
 }
 
@@ -394,6 +394,7 @@ a .bkImg-button:hover {
 }
 
 .grid-content-container {
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.55);
@@ -405,6 +406,10 @@ a .bkImg-button:hover {
   width: 70%;
   padding: 20px 0px 0px 10px;
   text-align: left;
+}
+
+.grid-content-container .bkImg-2-arrow {
+  display: none;
 }
 
 .bkImg-2-container {
@@ -427,7 +432,7 @@ a .bkImg-button:hover {
 
 .bkImg-2-content {
   color: #fff;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
   width: 40%;
   padding-left: 20px;
 }
@@ -569,6 +574,10 @@ a .bkImg-button:hover {
   color: #000;
 }
 
+.grid-number h5 {
+  font-weight: 900;
+}
+
 a:hover .bkImg-2-arrow {
   -webkit-transform: scale(1.25);
       -ms-transform: scale(1.25);
@@ -612,18 +621,12 @@ a .bkImg-button:hover {
 }
 
 .teaser-content-container {
+  position: relative;
   width: 100%;
   min-height: 400px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
-}
-
-.teaser-content-container:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  -webkit-transition: all .25s ease;
-       -o-transition: all .25s ease;
-          transition: all .25s ease;
 }
 
 .teaser-content {
@@ -919,6 +922,16 @@ video {
   }
 }
 @media screen and (max-width: 767px) {
+  .video-source {
+    display: none;
+  }
+
+  .section-container-faces,
+  .section-container-grey,
+  .section-container-white {
+    padding: 8px;
+  }
+
   body {
     font-size: 12px;
   }
@@ -964,6 +977,11 @@ video {
     margin-top: -150px;
   }
 
+  .bkImg-2-arrow {
+    right: 8px;
+    bottom: 8px;
+  }
+
   .bkSolid-content-right,
   .bkSolidleft-content-left {
     width: 90%;
@@ -994,6 +1012,10 @@ video {
 
   .grid-content-container {
     font-size: 1em;
+  }
+
+  .grid-content-container .bkImg-2-arrow {
+    display: block;
   }
 
   .grid-content {
@@ -1061,7 +1083,7 @@ video {
   }
 
   .grid-wrapper {
-    height: 200px;
+    height: 300px;
   }
 
   .video-content {

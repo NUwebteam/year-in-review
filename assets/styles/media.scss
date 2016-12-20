@@ -212,6 +212,15 @@
 
 
 @media screen and (max-width: 767px) {
+  .video-source {
+    display: none;
+  }
+
+  .section-container-faces,
+  .section-container-grey,
+  .section-container-white {
+    padding: 8px;
+  }
 
   body {
     font-size: 12px;
@@ -260,6 +269,11 @@
     // font-size: .75em;
   }
 
+  .bkImg-2-arrow {
+    right: 8px;
+    bottom: 8px;
+  }
+
   .bkSolid-content-right,
   .bkSolidleft-content-left {
     width: 90%;
@@ -291,6 +305,10 @@
 
   .grid-content-container {
     font-size: 1em;
+  }
+
+  .grid-content-container .bkImg-2-arrow {
+    display: block;
   }
 
   .grid-content {
@@ -357,7 +375,7 @@
     padding: 20px 0;
   }
   .grid-wrapper {
-    height: 200px;
+    height: 300px;
   }
   .video-content {
     padding-top: 5px;

@@ -16,9 +16,9 @@ $(document).ready(function() {
   var html = '';
 
 
-  $.get('https://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
+  // $.get('https://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
+  $.get('yir.csv', function (data) {
   // $.get('/news/wp-content/themes/nu-news-002/year-in-review/year-in-review-test.csv', function (data) {
-
     var articles = $.csv.toObjects(data);
 
     var gridTemplate = function(article, total) {
@@ -43,6 +43,9 @@ $(document).ready(function() {
         ret += '<div class="grid-content">';
         ret += '<h1>'+article.headline+'</h1>';
         ret += '</div>';
+        ret +='<a href="'+article.article_url+'" target="_blank">';
+        ret +='<img class="bkImg-2-arrow" src="assets/images/arrow.png" alt="Arrow">';
+        ret +='</a>';
         ret += '</div>';
         ret += '</div>';
         ret += '</a>';
@@ -282,22 +285,11 @@ $(document).ready(function() {
       return ret;
     };
 
-    // var textImageSliderTemplate = function(article, index) {
-    //   var ret = '';
-    //
-    //   ret += '<div class="text-image-wrapper">';
-    //   ret += '<div class="text-image-slide" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:100% auto;">';
-    //   ret += '</div>';
-    //   ret += '</div>';
-    //
-    //   return ret;
-    // };
-
     var teaserTemplate = function(article, total) {
       var ret = '';
 
       ret += '<div class="teaser-container">';
-      ret += '<a href="'+article.article_url+'" target="_blank">';
+      // ret += '<a href="'+article.article_url+'" target="_blank">';
       if (total % 4 === 0) {
         ret += '<div class="teaser-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
       } else if (total % 3 === 0) {
@@ -316,9 +308,12 @@ $(document).ready(function() {
         ret += '<h6>'+article.blurb+'</h6>';
       }
       ret += '</div>';
+      ret +='<a href="'+article.article_url+'" target="_blank">';
+      ret +='<img class="bkImg-2-arrow" src="assets/images/arrow.png" alt="Arrow">';
+      ret +='</a>';
       ret += '</div>';
       ret += '</div>';
-      ret += '</a>';
+      // ret += '</a>';
       ret += '</div>';
 
       return ret;
@@ -329,13 +324,6 @@ $(document).ready(function() {
 
       ret += '<div class="list-container">';
       ret += '<a href="'+article.article_url+'" target="_blank">';
-      // if (total % 4 === 0) {
-      //   ret += '<div class="list-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
-      // } else if (total % 3 === 0) {
-      //   ret += '<div class="list-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:33%;">';
-      // } else if (total % 2 === 0) {
-      //   ret += '<div class="teaser-wrapper" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:cover;width:25%;">';
-      // }
       ret += '<div class="list-content-container">'
       ret += '<div class="list-content clearfix">';
       if (article.short_headline) {
@@ -364,83 +352,28 @@ $(document).ready(function() {
         articlesArray.push(articles[i]);
       } else if (articles[i].section === 'Research') {
         researchArray.push(articles[i]);
-      } else if (articles[i].section === 'In The Press') {
+      } else if (articles[i].section === 'In-The-Press') {
         pressArray.push(articles[i]);
-      } else if (articles[i].section === 'Most Read') {
+      } else if (articles[i].section === 'Most-Read') {
         mostReadArray.push(articles[i]);
-      } else if (articles[i].section === 'New Partnerships') {
+      } else if (articles[i].section === 'New-Partnerships') {
         partnershipsArray.push(articles[i]);
-      } else if (articles[i].section === 'Exploring the World') {
+      } else if (articles[i].section === 'Exploring-the-World') {
         exploringArray.push(articles[i]);
-      } else if (articles[i].section === 'Global News Stories') {
+      } else if (articles[i].section === 'Global-News-Stories') {
         globalArray.push(articles[i]);
-      } else if (articles[i].section === 'Campus Updates') {
+      } else if (articles[i].section === 'Campus-Updates') {
         campusArray.push(articles[i]);
-      } else if (articles[i].section === 'In Competition') {
+      } else if (articles[i].section === 'In-Competition') {
         competitionArray.push(articles[i]);
-      } else if (articles[i].section === 'Big names to Campus') {
+      } else if (articles[i].section === 'Big-names-to-Campus') {
         celebsArray.push(articles[i]);
       } else if (articles[i].section === 'Faces') {
         facesArray.push(articles[i]);
-      } else if (articles[i].section === 'Best Photos') {
+      } else if (articles[i].section === 'Best-Photos') {
         photosArray.push(articles[i]);
       }
     }
-
-
-    // Loop through Article content
-
-    // for (var i = 0; i < articles.length; i++) {
-    //  if (articles[i].template === 'faces') {
-    //     facesArray.push(articles[i]);
-    //   } else if (articles[i].template === 'grid-layout') {
-    //     gridArray.push(articles[i]);
-    //   } else if (articles[i].template === 'image-gallery') {
-    //     imageArray.push(articles[i]);
-    //   } else if(articles[i].template === 'bkground-img') {
-    //     articlesArray.push(articles[i]);
-    //   } else if (articles[i].template === 'bkground-white-right-img') {
-    //     articlesArray.push(articles[i]);
-    //   } else if (articles[i].template === 'bkground-white-left-img') {
-    //     articlesArray.push(articles[i]);
-    //   } else if (articles[i].template === 'video') {
-    //     articlesArray.push(articles[i]);
-    //   } else if (articles[i].template === 'bkground-img-2') {
-    //     articlesArray.push(articles[i]);
-    //   }
-    // }
-
-    // for (var e = 0; e < articlesArray.length; e++) {
-    //   if (e === 4 ) {
-    //     articlesArray.insert(e, facesArray);
-    //   } else if ( e === 6 ){
-    //     articlesArray.insert(e, gridArray);
-    //   }
-    // }
-
-    // for (var i = 0; i < articlesArray.length; i++) {
-    //   if (i === 4 ) {
-    //     html += facesTemplate(facesArray);
-    //   } else if ( i === 6 ) {
-    //      html += gridTemplate(gridArray);
-    //   } else if (articlesArray[i].template === 'bkground-img') {
-    //     html += bkImgTemplate(articlesArray[i]);
-    //   } else if (articlesArray[i].template === 'bkground-white-right-img') {
-    //     html += bkSolidTemplate(articlesArray[i]);
-    //   } else if (articlesArray[i].template === 'bkground-white-left-img') {
-    //     html += bkSolidLeftTemplate(articlesArray[i]);
-    //   } else if (articlesArray[i].template === 'video') {
-    //     html += videoTemplate(articlesArray[i]);
-    //   } else if (articlesArray[i].template === 'bkground-img-2') {
-    //     html += bkImg_2_template(articlesArray[i]);
-    //   } else if (articlesArray[i].section_title) {
-    //     html += sectionTemplate(articlesArray[i]);
-    //   }
-    // }
-
-    // html += imageTemplate(imageArray);
-
-    // $('#content-template').html(html);
 
     var renderHeader = function(data) {
       html += '<div class="hero-container">';
@@ -454,20 +387,6 @@ $(document).ready(function() {
       html += '<h5> A Look Back at the year at Northeastern</h5>';
       html += '</div>';
       html += '</div>';
-      // ret += '<div class="video-container">';
-      // ret += '<video loop muted autoplay poster="'+article.image_or_video_poster_url+'" class="video-wrapper" style="margin-bottom: -5px;">';
-      // if ($(window).width() > 767) {
-      //   ret += '<source src="'+article.video_url+'" type="video/mp4" class="video-source">';
-      // }
-      // ret += '</video>';
-      // ret += '<div class="video-content-container">';
-      // ret += '<div class="video-content">';
-      // ret += '<h1>'+article.headline+'</h1>';
-      // ret += '<h3>'+article.topic+'</h3>';
-      // ret += '<a class="bkImg-button" href="'+article.article_url+'" target="_blank">Explore Article</a>';
-      // ret += '</div>';
-      // ret += '</div>';
-      // ret += '</div>';
     };
 
     var renderArticles = function(articles) {
@@ -613,8 +532,6 @@ $(document).ready(function() {
       html += imageTemplate(articles);
       html += '</div>';
     }
-
-
 
     renderHeader();
     renderArticles(articlesArray);

@@ -55,7 +55,7 @@ body {
 .section-container-faces {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   background-color: $white;
   color: $black;
@@ -74,7 +74,7 @@ body {
 .section-container > h1 {
   margin: 0px;
   padding: 20px 0px 40px 0px;
-  font-weight: 100;
+  font-weight: 700;
   font-size: 4em;
 }
 
@@ -372,6 +372,7 @@ a .bkImg-button:hover {
 }
 
 .grid-content-container {
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .55);
@@ -384,6 +385,11 @@ a .bkImg-button:hover {
   padding: 20px 0px 0px 10px;
   text-align: left;
 }
+
+.grid-content-container .bkImg-2-arrow {
+  display: none;
+}
+
 
 // bkImg-2-section
 
@@ -409,7 +415,7 @@ a .bkImg-button:hover {
 
 .bkImg-2-content {
   color: $white;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
   width: 40%;
   padding-left: 20px;
 }
@@ -559,6 +565,10 @@ a .bkImg-button:hover {
   color: $black;
 }
 
+.grid-number h5 {
+  font-weight: 900;
+}
+
 a:hover .bkImg-2-arrow {
   transform: scale(1.25);
   transition: all .25s ease;
@@ -593,6 +603,7 @@ a .bkImg-button:hover {
 }
 
 .teaser-content-container {
+  position: relative;
   width: 100%;
   min-height: 400px;
   color: $white;
@@ -600,10 +611,10 @@ a .bkImg-button:hover {
   text-align: center;
 }
 
-.teaser-content-container:hover {
-  background-color: rgba(0,0,0,.8);
-  transition: all .25s ease;
-}
+// .teaser-content-container:hover {
+//   background-color: rgba(0,0,0,.8);
+//   transition: all .25s ease;
+// }
 
 .teaser-content {
   padding: 30px 5px;
