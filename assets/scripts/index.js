@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 
   // $.get('https://docs.google.com/spreadsheets/d/1Wds85oEauCpyl6YnzKWdzdaOCxzRHHkOwNbsaC0O_CA/pub?output=csv', function (data) {
-  $.get('yir.csv', function (data) {
+  $.get('yir-2.csv', function (data) {
   // $.get('/news/wp-content/themes/nu-news-002/year-in-review/year-in-review-test.csv', function (data) {
     var articles = $.csv.toObjects(data);
 
@@ -264,18 +264,18 @@ $(document).ready(function() {
       return ret;
     };
 
-    var tileSliderTemplate = function(article, index) {
+    var tileSliderTemplate = function(article) {
       var ret = '';
 
       ret += '<div class="image-wrapper">';
       ret += '<div class="tile-slide" style="background:url('+article.image_or_video_poster_url+')no-repeat center center;background-size:100% auto;">';
       ret += '<div class="tile-content-container clearfix">';
-      ret += '<div class="tile-number">';
-      ret += '<h3>'+index+'</h3>';
-      ret += '</div>';
+      // ret += '<div class="tile-number">';
+      // ret += '<h3>'+index+'</h3>';
+      // ret += '</div>';
       ret += '<div class="tile-content clearfix">';
       ret += '<h3>'+article.headline+'</h3>';
-      ret += '<p>'+article.blurb+'</p>';
+      ret += '<p>'+article.topic+'</p>';
       ret += '<a class="bkImg-button" href="'+article.article_url+'" target="_blank">Explore Article</a>';
       ret += '</div>';
       ret += '</div>';
@@ -331,8 +331,8 @@ $(document).ready(function() {
       } else {
         ret += '<h5>'+article.headline+'</h5>';
       }
-      if (article.blurb) {
-        ret += '<h6>'+article.blurb+'</h6>';
+      if (article.topic) {
+        ret += '<h6>'+article.topic+'</h6>';
       }
       ret += '</div>';
       ret += '</div>';
@@ -376,7 +376,7 @@ $(document).ready(function() {
     }
 
     var renderHeader = function(data) {
-      html += '<div class="hero-container">';
+      html += '<div id="top" class="hero-container">';
       html += '<video loop muted autoplay poster="assets/images/header.png" class="video-wrapper" style="margin-bottom: -5px;">';
       if ($(window).width() > 767) {
         html += '<source src="assets/images/header.mp4" type="video/mp4" class="video-source">';
@@ -390,7 +390,7 @@ $(document).ready(function() {
     };
 
     var renderArticles = function(articles) {
-      html += '<div class="section-container section-container-white clearfix">';
+      html += '<div id="big-stories" class="section-container section-container-white clearfix">';
       html += '<h1>Explore Northeastern\'s biggest stories</h1>';
       for (var i = 0; i < articles.length; i++) {
         if (articles[i].template === 'bkground-img') {
@@ -410,7 +410,7 @@ $(document).ready(function() {
 
     var renderResearch = function(articles) {
       // console.log(articles);
-      html += '<div class="section-container section-container-white clearfix">';
+      html += '<div id="research" class="section-container section-container-white clearfix">';
       html += '<h1>Use-Inspired Research</h1>';
       for (var i = 0; i < articles.length; i++) {
         var total = (articles.length - 1);
@@ -425,7 +425,7 @@ $(document).ready(function() {
     }
 
     var renderFaces = function(faces) {
-      html += '<div class="section-container section-container-faces clearfix">';
+      html += '<div id="faces" class="section-container section-container-faces clearfix">';
       html += '<h1>Faces of Northeastern</h1>';
       html += facesTemplate(faces);
       html += '<div class="faces-content clearfix">';
@@ -435,7 +435,7 @@ $(document).ready(function() {
     };
 
     var renderMostRead = function(articles) {
-      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<div id="most-read" class="section-container section-container-grey clearfix">';
       html += '<h1>Most Read Stories</h1>';
       for (var i = 0; i < articles.length; i++) {
         var index = i + 1;
@@ -445,13 +445,13 @@ $(document).ready(function() {
       html += '</div>';
     };
 
-    var renderMostReadSlider = function(articles) {
-      html += '<div class="section-container section-container-white clearfix">';
-      html += '<h1>Most Read Articles - Slider</h1>';
-      html += '<div id="tile-slider" class="image-container clearfix">';
+    var renderInThePress = function(articles) {
+      html += '<div id="in-the-press" class="section-container section-container-white clearfix">';
+      html += '<h1>In the Press</h1>';
+      html += '<div id="tile-slider" class="tile-image-container clearfix">';
       for (var i = 0; i < articles.length; i++) {
         var index = i + 1;
-        html += tileSliderTemplate(articles[i], index);
+        html += tileSliderTemplate(articles[i]);
       }
       html += '</div>';
       html += '</div>';
@@ -470,7 +470,7 @@ $(document).ready(function() {
 
     var renderListTemplate = function(articles) {
       html += '<div class="section-container section-container-grey clearfix">';
-      html += '<h1>List Section</h1>';
+      html += '<h1>In the Press</h1>';
       for (var i = 0; i < articles.length; i++) {
         html += listTemplate(articles[i]);
       }
@@ -478,7 +478,7 @@ $(document).ready(function() {
     }
 
     var renderCompetition = function(articles) {
-      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<div id="in-competition" class="section-container section-container-grey clearfix">';
       html += '<h1>Students compete on the biggest stage</h1>';
       for (var i = 0; i < articles.length; i++) {
         var total = articles.length;
@@ -488,7 +488,7 @@ $(document).ready(function() {
     }
 
     var renderPartnerships = function(articles) {
-      html += '<div class="section-container section-container-white clearfix">';
+      html += '<div id="partnerships" class="section-container section-container-white clearfix">';
       html += '<h1>University establishes new partnerships at home and abroad</h1>';
       for (var i = 0; i < articles.length; i++) {
         var total = articles.length;
@@ -498,7 +498,7 @@ $(document).ready(function() {
     }
 
     var renderCampusUpdates = function(articles) {
-      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<div id="campus-updates" class="section-container section-container-grey clearfix">';
       html += '<h1>Campus Updates</h1>';
       for (var i = 0; i < articles.length; i++) {
         html += bkImg_2_template(articles[i]);
@@ -507,7 +507,7 @@ $(document).ready(function() {
     }
 
     var renderExploringWorld = function(articles) {
-      html += '<div class="section-container section-container-white clearfix">';
+      html += '<div id="exploring-the-world" class="section-container section-container-grey clearfix">';
       html += '<h1>Exploring the World</h1>';
       for (var i = 0; i < articles.length; i++) {
         var total = 2;
@@ -517,7 +517,7 @@ $(document).ready(function() {
     }
 
     var renderGlobalStories = function(articles) {
-      html += '<div class="section-container section-container-grey clearfix">';
+      html += '<div id="global-stories" class="section-container section-container-white clearfix">';
       html += '<h1>Major Global Stories</h1>';
       for (var i = 0; i < articles.length; i++) {
         var total = 2;
@@ -527,7 +527,7 @@ $(document).ready(function() {
     }
 
     var renderImages = function(articles) {
-      html += '<div class="section-container section-container-grey">';
+      html += '<div id="photos" class="section-container section-container-white">';
       html += '<h1>Top Photos of 2016</h1>';
       html += imageTemplate(articles);
       html += '</div>';
@@ -535,18 +535,20 @@ $(document).ready(function() {
 
     renderHeader();
     renderArticles(articlesArray);
-    renderMostRead(mostReadArray);
     renderResearch(researchArray);
     renderCompetition(competitionArray);
     renderPartnerships(partnershipsArray);
     renderCampusUpdates(campusArray);
+    renderInThePress(pressArray);
     renderExploringWorld(exploringArray);
     renderGlobalStories(globalArray);
     renderFaces(facesArray);
+    // renderListTemplate(pressArray);
     renderImages(photosArray);
+    renderMostRead(mostReadArray);
     // renderMostReadSlider(researchArray);
     // renderTeaseTemplate(researchArray);
-    // renderListTemplate(researchArray);
+    // renderListTemplate(pressArray);
 
 
     $('#content-template').html(html);
@@ -554,7 +556,7 @@ $(document).ready(function() {
     $('.image-container').slick({
       infinite: true,
       adaptiveHeight: false,
-      speed: 500,
+      speed: 250,
       fade: true,
       cssEase: 'linear',
       autoplay: true,
@@ -564,11 +566,36 @@ $(document).ready(function() {
     $('#tile-slider').slick({
       infinite: true,
       adaptiveHeight: false,
-      speed: 500,
+      speed: 1000,
       cssEase: 'linear',
       autoplay: true,
       arrows: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 4500,
       });
+
+    $('.up-prompt').on('click', function() {
+      $('.scroll-nav-container').toggleClass('appear');
+      $('.scroll-nav-container').toggleClass('disappear');
+      $('.up-prompt').toggleClass('rotate');
+    })
+
+    $('.scroll-nav-container a').on('click', function() {
+      $('.scroll-nav-container').removeClass('appear');
+      $('.scroll-nav-container').addClass('disappear');
+      $('.up-prompt').toggleClass('rotate');
+    })
+  });
+
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
   });
 });

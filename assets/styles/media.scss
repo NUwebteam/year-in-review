@@ -1,3 +1,9 @@
+@media screen and (max-width: 1200px) {
+  .scroll-nav-container {
+    margin-left: 0px;
+  }
+}
+
 @media screen and (max-width: 1135px) {
   .bkVideo-content {
     padding-top: 0px;
@@ -8,7 +14,20 @@
   }
 }
 
+@media screen and (max-width: 1050px) {
+  .video-content {
+    width: 100%;
+    height: 100%;
+    padding: 100px 20px 0px;
+    color: $white;
+  }
+}
+
 @media screen and (max-width: 992px){
+  video {
+    margin-bottom: -5px !important;
+  }
+
   body {
     font-size: 16px;
   }
@@ -32,7 +51,7 @@
   }
 
   .bkImg-2-content {
-    width: 50%;
+    width: 75%;
     padding-left: 15px;
   }
   .bkSolid-content-right,
@@ -212,6 +231,34 @@
 
 
 @media screen and (max-width: 767px) {
+  video {
+    margin-bottom: -5px !important;
+  }
+  .scroll-nav-container {
+    height: 100vh;
+    bottom: -95vh;
+  }
+
+  .appear {
+    transform: translateY(-95vh);
+    transition: all .5s ease;
+  }
+
+  .disappear {
+    transform: translateY(0vh);
+    transition: all .5s ease;
+  }
+
+  .scroll-nav-content-container h4 {
+    padding: 4px 0px;
+    font-size: 1.75em;
+  }
+  .up-prompt {
+    height: 75px;
+    width: 75px;
+    margin-top: -20px;
+  }
+
   .video-source {
     display: none;
   }
@@ -378,7 +425,7 @@
     height: 300px;
   }
   .video-content {
-    padding-top: 5px;
+    padding: 5px 5px 0px;
   }
   .bkSolidleft-content-right {
     margin-top: -100px;
@@ -415,9 +462,9 @@
     padding: 5px 5px;
   }
 
-  .image-content p {
-    display: none;
-  }
+  // .image-content p {
+  //   display: none;
+  // }
 
   .grid-numbers-wrapper {
     width: 100% !important;
